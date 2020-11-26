@@ -1,0 +1,33 @@
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# BEGIN Angular
+<IfModule mod_rewrite.c>
+RewriteEngine On
+# If an existing asset or directory is requested go to it as it is
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
+RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
+RewriteRule ^ - [L]
+# If the requested resource doesn't exist, use index.html
+RewriteRule ^ /index.html
+</IfModule>
+# END Angular
+
+
+
+
+#<IfModule mod_rewrite.c>
+#
+#RewriteCond %{HTTPS} off
+## First rewrite to HTTPS:
+## Don't put www. here. If it is already there it will be included, if not
+## the subsequent rule will catch it.
+#RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+## Now, rewrite any request to the wrong domain to use www.
+## [NC] is a case-insensitive match
+#RewriteCond %{HTTP_HOST} !^www\. [NC]
+#RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+#
+#</IfModule>
+
