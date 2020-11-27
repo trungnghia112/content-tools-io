@@ -1,6 +1,16 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  Inject,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  SimpleChanges,
+  ViewEncapsulation
+} from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { clone } from 'lodash-es';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-theme-view',
@@ -43,7 +53,8 @@ export class ThemeViewComponent implements OnInit, OnChanges, OnDestroy {
     ]
   };
 
-  constructor(private sanitizer: DomSanitizer) {
+  constructor(private sanitizer: DomSanitizer,
+              @Inject(DOCUMENT) private document: Document) {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -69,7 +80,7 @@ export class ThemeViewComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    const styleExits = document.getElementById('style-theme-css');
+    const styleExits = this.document.getElementById('style-theme-css');
     if (styleExits) {
       styleExits.remove();
     }
@@ -97,11 +108,11 @@ export class ThemeViewComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   private addStyle() {
-    let styleExits: any = document.getElementById('style-theme-css');
+    let styleExits: any = this.document.getElementById('style-theme-css');
     if (!styleExits) {
-      styleExits = document.createElement('style');
+      styleExits = this.document.createElement('style');
       styleExits.id = 'style-theme-css';
-      document.head.appendChild(styleExits);
+      this.document.head.appendChild(styleExits);
     }
     styleExits.innerHTML = this.css;
   }
