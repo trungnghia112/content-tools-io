@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "content-tools-io"
+  },
+  "targets": {
+    "content-tools-io": {
+      "hosting": {
+        "content-tools-io": [
+          "content-tools-io"
+        ]
+      }
+    }
   }
 }
