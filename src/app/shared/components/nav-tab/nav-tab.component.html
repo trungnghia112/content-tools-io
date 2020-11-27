@@ -1,0 +1,53 @@
+<!--
+<nav *ngIf="tabs" class="nav-tabs-wrap" [ngClass]="cssClass">
+  <div *ngIf="tabs.length > break" class="btn-group visible-xs-inline-block">
+    <button *ngIf="tabActive" type="button" class="btn btn-outline-default dropdown-toggle" data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false">
+      <i *ngIf="tabActive?.icon" [class]="tabActive?.icon"></i> {{ tabActive?.name }}
+      <small *ngIf="tabActive.number">{{ tabActive.number }}</small>
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+      <li *ngFor="let tab of tabs">
+        <a (click)="onTab(tab)" href="javascript:;">
+          <i *ngIf="tab.icon" [class]="tab.icon"></i> {{ tab.name }}
+          <small *ngIf="tab.number">{{ tab.number }}</small>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <ul [ngClass]="{'hidden-xs': tabs.length > break, 'nav-tabs-between-xs' : tabs.length <= break}" class="nav nav-tabs">
+    <li *ngFor="let tab of tabs" [ngClass]="{active: tab == tabActive}">
+      <a (click)="onTab(tab)" href="javascript:;">
+        <ng-container *ngIf="!tab.tooltip;else templateTooltip">
+          <i *ngIf="tab.icon" [class]="tab.icon"></i>
+        </ng-container>
+        <ng-template #templateTooltip>
+          <i *ngIf="tab.icon" [class]="tab.icon" pTooltip="{{ tab.tooltip }}" tooltipPosition="top"></i>
+        </ng-template>
+        {{ tab.name }}
+        <span *ngIf="tab.number" class="badge">{{ tab.number }}</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+-->
+<nav class="nav-tabs-wrap">
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item" *ngFor="let tab of tabs" [ngClass]="{show: tab == tabActive}">
+      <ng-container *ngIf="!tab.tooltip;else templateTooltip">
+        <a class="nav-link" href="javascript:;" (click)="onTab(tab)">
+          <i *ngIf="tab.icon" [class]="tab.icon"></i> {{ tab.name }}
+        </a>
+      </ng-container>
+      <ng-template #templateTooltip>
+        <a class="nav-link" href="javascript:;" (click)="onTab(tab)" pTooltip="{{ tab.tooltip }}" tooltipPosition="top">
+          <i *ngIf="tab.icon" [class]="tab.icon"></i> {{ tab.name }}
+        </a>
+      </ng-template>
+    </li>
+  </ul>
+</nav>
+

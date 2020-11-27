@@ -1,0 +1,52 @@
+.p-menu {
+  border-width: 0;
+  border-radius: 0;
+  width: auto;
+
+  .p-menuitem + .p-submenu-header {
+    margin-top: 15px;
+  }
+
+  .p-submenu-header {
+    span {
+      text-transform: uppercase;
+      color: #99a3a9;
+      font-size: 12px;
+    }
+  }
+
+  .p-menuitem-link {
+    &:focus {
+      box-shadow: none;
+    }
+
+    .p-menuitem-icon {
+      font-size: 18px;
+      color: #99a3a9;
+    }
+  }
+
+  .p-menuitem-link-active {
+    .p-menuitem-icon,
+    .p-menuitem-text {
+      color: $primary;
+    }
+
+    &:not(.p-disabled):hover {
+      .p-menuitem-icon,
+      .p-menuitem-text {
+        color: $primary;
+      }
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background-color: $primary;
+    }
+  }
+}

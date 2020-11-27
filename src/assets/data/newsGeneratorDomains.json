@@ -1,0 +1,336 @@
+[
+  {
+    "label": "vnexpress.net",
+    "value": "vnexpress.net",
+    "categories": [
+      {
+        "label": "Trang chủ",
+        "value": "https://vnexpress.net",
+        "type": "home"
+      },
+      {
+        "label": "Số hóa",
+        "value": "https://vnexpress.net/so-hoa",
+        "type": "category"
+      },
+      {
+        "label": "Thời sự",
+        "value": "https://vnexpress.net/thoi-su",
+        "type": "category"
+      },
+      {
+        "label": "Thế giới",
+        "value": "https://vnexpress.net/the-gioi",
+        "type": "category"
+      },
+      {
+        "label": "Kinh doanh",
+        "value": "https://vnexpress.net/kinh-doanh",
+        "type": "category"
+      },
+      {
+        "label": "Giải trí",
+        "value": "https://vnexpress.net/giai-tri",
+        "type": "category"
+      },
+      {
+        "label": "Thể thao",
+        "value": "https://vnexpress.net/the-thao",
+        "type": "category"
+      },
+      {
+        "label": "Pháp luật",
+        "value": "https://vnexpress.net/phap-luat",
+        "type": "category"
+      },
+      {
+        "label": "Giáo dục",
+        "value": "https://vnexpress.net/giao-duc",
+        "type": "category"
+      },
+      {
+        "label": "Sức khỏe",
+        "value": "https://vnexpress.net/suc-khoe",
+        "type": "category"
+      },
+      {
+        "label": "Khoa học",
+        "value": "https://vnexpress.net/khoa-hoc",
+        "type": "category"
+      },
+      {
+        "label": "Xe",
+        "value": "https://vnexpress.net/oto-xe-may",
+        "type": "category"
+      }
+    ]
+  },
+  {
+    "label": "dantri.com.vn",
+    "value": "dantri.com.vn",
+    "categories": [
+      {
+        "label": "Trang chủ",
+        "value": "https://dantri.com.vn",
+        "type": "home"
+      },
+      {
+        "label": "Sự kiện",
+        "value": "https://dantri.com.vn/su-kien.htm",
+        "type": "category"
+      },
+      {
+        "label": "Xã hội",
+        "value": "https://dantri.com.vn/xa-hoi.htm",
+        "type": "category"
+      },
+      {
+        "label": "Thế giới",
+        "value": "https://dantri.com.vn/the-gioi.htm",
+        "type": "category"
+      },
+      {
+        "label": "Thể thao",
+        "value": "https://dantri.com.vn/the-thao.htm",
+        "type": "category"
+      },
+      {
+        "label": "Giáo dục",
+        "value": "https://dantri.com.vn/giao-duc-khuyen-hoc.htm",
+        "type": "category"
+      },
+      {
+        "label": "Tấm lòng nhân ái",
+        "value": "https://dantri.com.vn/tam-long-nhan-ai.htm",
+        "type": "category"
+      },
+      {
+        "label": "Kinh doanh",
+        "value": "https://dantri.com.vn/kinh-doanh.htm",
+        "type": "category"
+      },
+      {
+        "label": "Bất động sản",
+        "value": "https://dantri.com.vn/bat-dong-san.htm",
+        "type": "category"
+      },
+      {
+        "label": "Văn hóa",
+        "value": "https://dantri.com.vn/van-hoa.htm",
+        "type": "category"
+      },
+      {
+        "label": "Giải trí",
+        "value": "https://dantri.com.vn/giai-tri.htm",
+        "type": "category"
+      },
+      {
+        "label": "Pháp luật",
+        "value": "https://dantri.com.vn/phap-luat.htm",
+        "type": "category"
+      },
+      {
+        "label": "Nhịp sống trẻ",
+        "value": "https://dantri.com.vn/nhip-song-tre.htm",
+        "type": "category"
+      },
+      {
+        "label": "Sức khỏe",
+        "value": "https://dantri.com.vn/suc-khoe.htm",
+        "type": "category"
+      },
+      {
+        "label": "Sức mạnh số",
+        "value": "https://dantri.com.vn/suc-manh-so.htm",
+        "type": "category"
+      },
+      {
+        "label": "Ô tô - xe máy",
+        "value": "https://dantri.com.vn/o-to-xe-may.htm",
+        "type": "category"
+      },
+      {
+        "label": "Tình yêu giới tính",
+        "value": "https://dantri.com.vn/tinh-yeu-gioi-tinh.htm",
+        "type": "category"
+      }
+    ]
+  },
+  {
+    "label": "vietnamnet.vn",
+    "value": "vietnamnet.vn",
+    "categories": [
+      {
+        "label": "Trang chủ",
+        "value": "https://vietnamnet.vn",
+        "type": "home"
+      },
+      {
+        "label": "Chính trị",
+        "value": "https://vietnamnet.vn/vn/thoi-su/chinh-tri/",
+        "type": "category"
+      },
+      {
+        "label": "Thời sự",
+        "value": "https://vietnamnet.vn/vn/thoi-su/",
+        "type": "category"
+      },
+      {
+        "label": "Kinh doanh",
+        "value": "https://vietnamnet.vn/vn/kinh-doanh/",
+        "type": "category"
+      },
+      {
+        "label": "Giải trí",
+        "value": "https://vietnamnet.vn/vn/giai-tri/",
+        "type": "category"
+      },
+      {
+        "label": "Thế giới",
+        "value": "https://vietnamnet.vn/vn/the-gioi/",
+        "type": "category"
+      },
+      {
+        "label": "Giáo dục",
+        "value": "https://vietnamnet.vn/vn/giao-duc/",
+        "type": "category"
+      },
+      {
+        "label": "Đời sống",
+        "value": "https://vietnamnet.vn/vn/doi-song/",
+        "type": "category"
+      },
+      {
+        "label": "Pháp luật",
+        "value": "https://vietnamnet.vn/vn/phap-luat/",
+        "type": "category"
+      },
+      {
+        "label": "Thể thao",
+        "value": "https://vietnamnet.vn/vn/the-thao/",
+        "type": "category"
+      },
+      {
+        "label": "Công nghệ",
+        "value": "https://vietnamnet.vn/vn/cong-nghe/",
+        "type": "category"
+      },
+      {
+        "label": "Sức khỏe",
+        "value": "https://vietnamnet.vn/vn/suc-khoe/",
+        "type": "category"
+      },
+      {
+        "label": "Bất động sản",
+        "value": "https://vietnamnet.vn/vn/bat-dong-san/",
+        "type": "category"
+      },
+      {
+        "label": "Bạn đọc",
+        "value": "https://vietnamnet.vn/vn/ban-doc/",
+        "type": "category"
+      },
+      {
+        "label": "Tuần Việt Nam ",
+        "value": "https://vietnamnet.vn/vn/tuanvietnam/",
+        "type": "category"
+      },
+      {
+        "label": "Xe",
+        "value": "https://vietnamnet.vn/vn/oto-xe-may/",
+        "type": "category"
+      }
+    ]
+  },
+  {
+    "label": "tuoitre.vn",
+    "value": "tuoitre.vn",
+    "categories": [
+      {
+        "label": "Trang chủ",
+        "value": "https://tuoitre.vn",
+        "type": "home"
+      },
+      {
+        "label": "Thời sự",
+        "value": "https://tuoitre.vn/thoi-su.htm",
+        "type": "category"
+      },
+      {
+        "label": "Thế giới",
+        "value": "https://tuoitre.vn/the-gioi.htm",
+        "type": "category"
+      },
+      {
+        "label": "Pháp luật",
+        "value": "https://tuoitre.vn/phap-luat.htm",
+        "type": "category"
+      },
+      {
+        "label": "Kinh doanh",
+        "value": "https://tuoitre.vn/kinh-doanh.htm",
+        "type": "category"
+      },
+      {
+        "label": "Công nghệ",
+        "value": "https://congnghe.tuoitre.vn",
+        "type": "category"
+      },
+      {
+        "label": "Xe",
+        "value": "https://tuoitre.vn/xe.htm",
+        "type": "category"
+      },
+      {
+        "label": "Du lịch",
+        "value": "https://dulich.tuoitre.vn",
+        "type": "category"
+      },
+      {
+        "label": "Nhịp sống trẻ",
+        "value": "https://tuoitre.vn/nhip-song-tre.htm",
+        "type": "category"
+      },
+      {
+        "label": "Văn hóa",
+        "value": "https://tuoitre.vn/van-hoa.htm",
+        "type": "category"
+      },
+      {
+        "label": "Giải trí",
+        "value": "https://tuoitre.vn/giai-tri.htm",
+        "type": "category"
+      },
+      {
+        "label": "Thể thao",
+        "value": "https://thethao.tuoitre.vn",
+        "type": "category"
+      },
+      {
+        "label": "Giáo dục",
+        "value": "https://tuoitre.vn/giao-duc.htm",
+        "type": "category"
+      },
+      {
+        "label": "Khoa học",
+        "value": "https://tuoitre.vn/khoa-hoc.htm",
+        "type": "category"
+      },
+      {
+        "label": "Sức khỏe",
+        "value": "https://tuoitre.vn/suc-khoe.htm",
+        "type": "category"
+      },
+      {
+        "label": "Giả-thật",
+        "value": "https://tuoitre.vn/gia-that.htm",
+        "type": "category"
+      },
+      {
+        "label": "Bạn đọc",
+        "value": "https://tuoitre.vn/ban-doc-lam-bao.htm",
+        "type": "category"
+      }
+    ]
+  }
+]

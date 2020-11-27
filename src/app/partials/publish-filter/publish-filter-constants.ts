@@ -1,0 +1,62 @@
+export const PublishFilterConstants = {
+  sizeData: [
+    {label: '10', value: 10},
+    {label: '20', value: 20},
+    {label: '50', value: 50},
+    {label: '100', value: 100},
+    {label: '150', value: 150},
+    {label: '200', value: 200},
+    {label: '500', value: 500},
+    {label: '1000', value: 1000}
+  ],
+  contentTypeData: [
+    {label: 'All', value: 'all'},
+    {label: 'All Video', value: 'all_video'},
+    {label: 'Embedded Video', value: 'embedded_video'},
+    {label: 'Native Video', value: 'native_video'},
+    {label: 'Live Video', value: 'live_video'},
+    {label: 'Link', value: 'link'},
+    {label: 'Photo', value: 'photo'},
+    {label: 'Status', value: 'status'},
+    {label: 'Branded Content', value: 'branded_content'},
+  ],
+  sortByData: [
+    {label: 'Default', value: 'default'},
+    {label: 'Max Score', value: 'nw_max_score'},
+    {label: 'Over performing', value: 'fb_overperforming'},
+    {label: 'Total Engagement', value: 'fb_total_engagement'},
+    {label: 'Created Date', value: 'created_at'},
+    {label: 'Like', value: 'fb_likes'},
+    {label: 'Share', value: 'fb_shares'},
+    {label: 'Comment', value: 'fb_comments'},
+    {label: 'Love', value: 'fb_loves'},
+    {label: 'Wow', value: 'fb_wows'},
+    {label: 'Haha', value: 'fb_hahas'},
+    {label: 'Sad', value: 'fb_sads'},
+    {label: 'Angry', value: 'fb_angrys'},
+  ],
+  filterByDateData: [
+    {label: '30 Minutes', value: '30-minute'},
+    {label: '1 Hours', value: '1-hour'},
+    {label: '3 Hours', value: '3-hour'},
+    {label: '6 Hours', value: '6-hour'},
+    {label: '12 Hours', value: '12-hour'},
+    {label: '24 Hours', value: 'hour'},
+    {label: 'Week', value: 'week'},
+    {label: 'Month', value: 'month'},
+    {label: '3 Months', value: '3-month'},
+    {label: '6 Months', value: '6-month'},
+    {label: 'Year', value: 'year'},
+    {label: 'Custom Date', value: 'custom'}
+  ],
+  regionsData: [
+    {label: 'North America', value: 'na'},
+    {label: 'Europe', value: 'eu'},
+    {label: 'Oceania', value: 'oc'},
+    {label: 'South East Asia', value: 'sea'},
+    {label: 'South America', value: 'sa'},
+    {label: 'Asia', value: 'as'},
+    {label: 'Middle East', value: 'me'},
+    {label: 'Africa', value: 'af'}
+  ]
+};

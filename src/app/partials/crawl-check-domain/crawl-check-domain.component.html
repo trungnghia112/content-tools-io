@@ -1,0 +1,5 @@
+<span *ngIf="domainStatus === 'active'" class="text-success"><i class="pi pi-check-circle"></i> {{ domain }}</span>
+<span *ngIf="domainStatus === 'inactive'" class="p-text-info"><i class="pi pi-pause"></i> {{ domain }}</span>
+<span *ngIf="domainStatus === 'out_of_date'" class="text-warning"><i class="pi pi-exclamation-triangle"></i> {{ domain }}</span>
+<span *ngIf="domainStatus === 'block'" class="text-danger"><i class="pi pi-times-circle"></i> {{ domain }}</span>
+<span *ngIf="domainStatus === 'not_support'" class="text-secondary"><i class="pi pi-ban"></i> {{ domain }}</span>

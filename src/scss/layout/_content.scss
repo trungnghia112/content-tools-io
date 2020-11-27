@@ -1,0 +1,79 @@
+/* ==========================================================================
+Content
+========================================================================== */
+.app-loading {
+  display: none;
+}
+
+.main {
+  @include media-breakpoint-up(md) {
+    padding-left: 400px;
+    position: relative;
+  }
+}
+
+.main-aside {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  @include flexbox;
+  @include flex-direction(column);
+
+  .card-news-header {
+    @include flex(0 0 auto);
+    padding: 10px;
+    @include flexbox;
+    @include justify-content(space-between);
+    @include align-items(center);
+    box-shadow: 0px 5px 5px -5px rgba(#000, 0.3);
+    position: relative;
+    z-index: 10;
+  }
+
+  .card-news-list {
+    @include flex(1);
+    overflow: auto;
+    padding: 0 10px 10px;
+  }
+}
+
+.main-content {
+  position: relative;
+  z-index: 1;
+}
+
+body {
+  .p-sidebar-left {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .p-sidebar-content {
+    height: 100%;
+  }
+
+  .sidebar-filters-wrap {
+    height: 100%;
+    @include flexbox;
+    @include flex-direction(column);
+  }
+
+  .sidebar-filters-header,
+  .sidebar-filters-actions {
+    @include flex(0 0 auto);
+  }
+
+  .sidebar-filters-content {
+    @include flex(1);
+    overflow: auto;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}

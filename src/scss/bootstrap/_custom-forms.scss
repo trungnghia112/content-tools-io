@@ -1,0 +1,534 @@
+/*
+Custom Forms
+
+For even more customization and cross browser consistency, use our completely custom form elements to replace the browser defaults. They’re built on top of semantic and accessible markup, so they’re solid replacements for any default form control.
+
+Markup:
+<div class="form-group form-group-last">
+  <div class="alert alert-secondary alert-dismissible" role="alert">
+    <div class="alert-content">
+      <div class="alert-icon">
+        <i class="fa fa-exclamation-circle"></i>
+      </div>
+      <div class="alert-text">
+      For even more customization and cross browser consistency, use our completely custom form elements to replace the browser defaults. They’re built on top of semantic and accessible markup, so they’re solid replacements for any default form control.
+      </div>
+      <div class="alert-close">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-group">
+  <div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="customCheck1">
+    <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+  </div>
+</div>
+<div class="form-group">
+  <div class="custom-control custom-radio">
+    <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+    <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+  </div>
+  <div class="custom-control custom-radio">
+    <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+    <label class="custom-control-label" for="customRadio2">Or toggle this other custom radio</label>
+  </div>
+</div>
+<div class="form-group">
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline1">Toggle this custom radio</label>
+  </div>
+  <div class="custom-control custom-radio custom-control-inline">
+    <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+    <label class="custom-control-label" for="customRadioInline2">Or toggle this other custom radio</label>
+  </div>
+</div>
+<div class="form-group">
+  <label>Custom Select</label>
+  <select class="custom-select">
+    <option selected>Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
+<div class="form-group">
+  <select class="custom-select custom-select-lg mb-3">
+    <option selected>Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
+<div class="form-group">
+  <select class="custom-select custom-select-sm">
+    <option selected>Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
+<div class="form-group">
+  <select class="custom-select" multiple>
+    <option selected>Open this select menu</option>
+    <option value="1">One</option>
+    <option value="2">Two</option>
+    <option value="3">Three</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="customRange1">Example range</label>
+  <input type="range" class="custom-range" id="customRange1">
+</div>
+<div class="form-group">
+  <label>File Browser</label>
+  <div class="custom-file">
+    <input type="file" class="custom-file-input" id="customFile">
+    <label class="custom-file-label" for="customFile">Choose file</label>
+  </div>
+</div>
+
+Weight: 10
+
+Styleguide Components.forms.custom-forms
+ */
+
+.custom-select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.custom-range {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  &::-moz-range-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  &::-ms-thumb {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+}
+
+.custom-control {
+  min-height: $custom-control-indicator-size/2 + $font-size-base * $line-height-base;
+  padding-left: 0;
+}
+
+.custom-control-inline {
+}
+
+.custom-control-input {
+  &:checked ~ .custom-control-label::before {
+    background-color: $custom-control-indicator-bg;
+    border-color: $custom-control-indicator-border-color;
+  }
+
+  &:focus:not(:checked) ~ .custom-control-label::before {
+    border-color: $custom-control-indicator-border-color;
+  }
+
+  &:disabled {
+    ~ .custom-control-label {
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+  }
+}
+
+.custom-control-label {
+  cursor: pointer;
+  padding-left: $custom-control-gutter + $custom-control-indicator-size;
+  &::before, &::after {
+    left: 0;
+  }
+}
+
+/*
+Custom Checkbox & Radio
+
+Markup:
+<div class="form-group">
+  <div class="custom-control custom-checkbox {{modifier_class}}">
+    <input type="checkbox" class="custom-control-input" id="customCheck1{{modifier_class}}">
+    <label class="custom-control-label" for="customCheck1{{modifier_class}}">Check this custom checkbox</label>
+  </div>
+  <div class="custom-control custom-checkbox {{modifier_class}}">
+    <input type="checkbox" class="custom-control-input" checked id="customCheck2{{modifier_class}}">
+    <label class="custom-control-label" for="customCheck2{{modifier_class}}">Check this custom checkbox checked</label>
+  </div>
+  <div class="custom-control custom-checkbox {{modifier_class}}">
+    <input type="checkbox" class="custom-control-input" disabled id="customCheck3{{modifier_class}}">
+    <label class="custom-control-label" for="customCheck3{{modifier_class}}">Check this custom checkbox disabled</label>
+  </div>
+  <div class="custom-control custom-checkbox {{modifier_class}}">
+    <input type="checkbox" class="custom-control-input" disabled checked id="customCheck4{{modifier_class}}">
+    <label class="custom-control-label" for="customCheck4{{modifier_class}}">Check this custom checkbox disabled checked</label>
+  </div>
+</div>
+<div class="form-group">
+  <div class="custom-control custom-radio {{modifier_class}}">
+    <input type="radio" id="customRadio1{{modifier_class}}" name="customRadio" class="custom-control-input">
+    <label class="custom-control-label" for="customRadio1{{modifier_class}}">Toggle this custom radio</label>
+  </div>
+  <div class="custom-control custom-radio {{modifier_class}}">
+    <input type="radio" id="customRadio2{{modifier_class}}" name="customRadio" class="custom-control-input">
+    <label class="custom-control-label" for="customRadio2{{modifier_class}}">Toggle this custom radio</label>
+  </div>
+  <div class="custom-control custom-radio {{modifier_class}}">
+    <input type="radio" id="customRadio3" name="customRadio2" disabled class="custom-control-input">
+    <label class="custom-control-label" for="customRadio3{{modifier_class}}">Toggle this custom radio disabled</label>
+  </div>
+</div>
+
+.custom-control-primary - Primary.
+.custom-control-secondary - Secondary.
+.custom-control-success - Success.
+.custom-control-danger - Danger.
+.custom-control-warning - Warning.
+.custom-control-info - Info.
+.custom-control-light - Light.
+.custom-control-dark - Dark.
+.custom-control-link - Link.
+.custom-control-brand - Brand.
+.custom-control-outline-primary - Outline Primary.
+.custom-control-outline-secondary - Outline Secondary.
+.custom-control-outline-success - Outline Success.
+.custom-control-outline-danger - Outline Danger.
+.custom-control-outline-warning - Outline Warning.
+.custom-control-outline-info - Outline Info.
+.custom-control-outline-light - Outline Light.
+.custom-control-outline-dark - Outline Dark.
+.custom-control-outline-link - Outline Link.
+.custom-control-outline-brand - Outline Brand.
+
+Weight: 11
+
+Styleguide Components.forms.custom-forms-checkbox-radio
+ */
+.custom-checkbox {
+  .custom-control-label::after {
+    background-image: none;
+    width: 5px;
+    height: 10px;
+    border-width: 0 2px 2px 0;
+    @include transform(rotate(45deg));
+    margin-top: -$custom-control-indicator-border-width*2 + 10px/2;
+    margin-left: calc(#{-5px/2} + #{$custom-control-indicator-size/2});
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      border-style: solid;
+      border-color: $custom-control-indicator-checked-color;
+    }
+  }
+}
+
+.custom-radio {
+  .custom-control-label::after {
+    background-image: none;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    border-width: 3px;
+    margin-top: calc(#{-6px/2} + #{$custom-control-indicator-size/2});
+    margin-left: calc(#{-6px/2} + #{$custom-control-indicator-size/2});
+  }
+
+  .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      border-style: solid;
+      border-color: $custom-control-indicator-checked-color;
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .custom-control-#{$color} {
+    .custom-control-input {
+      ~ .custom-control-label::before {
+        background-color: $value;
+        border-color: $value;
+      }
+      &:checked ~ .custom-control-label {
+        &::before {
+          background-color: $value;
+          border-color: $value;
+        }
+        &::after {
+          border-color: #ffffff;
+        }
+      }
+
+      &:focus:not(:checked) ~ .custom-control-label::before {
+        border-color: $value;
+      }
+
+      &:disabled {
+        &:checked ~ .custom-control-label,
+        ~ .custom-control-label {
+          &::before {
+            background-color: $value;
+            border-color: $value;
+          }
+        }
+      }
+    }
+  }
+  .custom-control-outline-#{$color} {
+    .custom-control-input {
+      ~ .custom-control-label::before {
+        background-color: $custom-control-indicator-bg;
+        border-color: $value;
+      }
+      &:checked ~ .custom-control-label {
+        &::before {
+          background-color: $custom-control-indicator-bg;
+          border-color: $value;
+        }
+        &::after {
+          border-color: $value;
+        }
+      }
+
+      &:focus:not(:checked) ~ .custom-control-label::before {
+        border-color: $value;
+      }
+
+      &:disabled {
+        &:checked ~ .custom-control-label,
+        ~ .custom-control-label {
+          &::before {
+            background-color: $custom-control-indicator-bg;
+            border-color: $value;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*
+Custom Switch
+
+Markup:
+<div class="form-group">
+  <div class="custom-control custom-switch {{modifier_class}}">
+    <input type="checkbox" class="custom-control-input" id="customSwitch0{{modifier_class}}">
+    <label class="custom-control-label" for="customSwitch0{{modifier_class}}">Toggle this switch element</label>
+  </div>
+  <div class="custom-control custom-switch {{modifier_class}}">
+    <input type="checkbox" checked class="custom-control-input" id="customSwitch1{{modifier_class}}">
+    <label class="custom-control-label" for="customSwitch1{{modifier_class}}">Toggle this switch element checked</label>
+  </div>
+  <div class="custom-control custom-switch {{modifier_class}}">
+    <input type="checkbox" class="custom-control-input" disabled id="customSwitch2{{modifier_class}}">
+    <label class="custom-control-label" for="customSwitch2{{modifier_class}}">Disabled switch element</label>
+  </div>
+  <div class="custom-control custom-switch {{modifier_class}}">
+    <input type="checkbox" checked class="custom-control-input" disabled id="customSwitch3{{modifier_class}}">
+    <label class="custom-control-label" for="customSwitch3{{modifier_class}}">Disabled switch element checked</label>
+  </div>
+  <div class="custom-control custom-switch custom-switch-icon {{modifier_class}}">
+    <input type="checkbox" class="custom-control-input" id="customSwitch4{{modifier_class}}">
+    <label class="custom-control-label" for="customSwitch4{{modifier_class}}">Switch icon</label>
+  </div>
+  <div class="custom-control custom-switch custom-switch-icon {{modifier_class}}">
+    <input type="checkbox" checked class="custom-control-input" id="customSwitch5{{modifier_class}}">
+    <label class="custom-control-label" for="customSwitch5{{modifier_class}}">Switch icon checked</label>
+  </div>
+</div>
+
+.custom-switch-primary - Primary.
+.custom-switch-secondary - Secondary.
+.custom-switch-success - Success.
+.custom-switch-danger - Danger.
+.custom-switch-warning - Warning.
+.custom-switch-info - Info.
+.custom-switch-light - Light.
+.custom-switch-dark - Dark.
+.custom-switch-link - Link.
+.custom-switch-brand - Brand.
+.custom-switch-outline-primary - Outline Primary.
+.custom-switch-outline-secondary - Outline Secondary.
+.custom-switch-outline-success - Outline Success.
+.custom-switch-outline-danger - Outline Danger.
+.custom-switch-outline-warning - Outline Warning.
+.custom-switch-outline-info - Outline Info.
+.custom-switch-outline-light - Outline Light.
+.custom-switch-outline-dark - Outline Dark.
+.custom-switch-outline-link - Outline Link.
+.custom-switch-outline-brand - Outline Brand.
+
+Weight: 12
+
+Styleguide Components.forms.custom-forms-switch
+ */
+
+.custom-switch {
+  & + .custom-switch {
+    margin-top: 8px;
+  }
+  .custom-control-label {
+    padding-left: $custom-switch-width + $custom-control-gutter;
+    height: calc(#{$custom-switch-indicator-size} + #{$custom-control-indicator-border-width * 4});
+    @include flexbox;
+    @include align-items(center);
+    &::before {
+      left: 0;
+      height: calc(#{$custom-switch-indicator-size} + #{$custom-control-indicator-border-width * 4});
+    }
+    &::after {
+      left: $custom-control-indicator-border-width * 2;
+      background-color: #fff;
+    }
+  }
+  .custom-control-label::before,
+  .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
+  .custom-control-input:checked ~ .custom-control-label::before {
+    background-color: lighten($custom-control-indicator-border-color, 15%);
+    border-color: lighten($custom-control-indicator-border-color, 15%);
+  }
+  .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      background-color: $component-active-bg;
+      transform: translateX(calc(#{$custom-switch-width - $custom-switch-indicator-size} - #{$custom-control-indicator-border-width * 4}));
+    }
+  }
+}
+
+.custom-switch-icon {
+  .custom-control-input:checked ~ .custom-control-label {
+    &::after {
+      @include fontawesome-icon;
+      @include fontawesome-icon-fas;
+      content: fa-content($fa-var-check);
+      color: #ffffff;
+      @include flexbox;
+      @include justify-content(center);
+      @include align-items(center);
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .custom-switch-#{$color} {
+    .custom-control-label::before,
+    .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
+    .custom-control-input:checked ~ .custom-control-label::before {
+      background-color: $value;
+      border-color: $value;
+    }
+    .custom-control-input ~ .custom-control-label {
+      &::after {
+        background-color: #ffffff;
+        opacity: 0.4;
+      }
+    }
+    .custom-control-input:checked ~ .custom-control-label {
+      &::after {
+        background-color: #ffffff;
+        opacity: 1;
+      }
+    }
+  }
+  .custom-switch-outline-#{$color} {
+    .custom-control-label::before,
+    .custom-control-input:focus:not(:checked) ~ .custom-control-label::before,
+    .custom-control-input:checked ~ .custom-control-label::before {
+      background-color: lighten($custom-control-indicator-border-color, 15%);
+      border-color: $custom-control-indicator-border-color;
+    }
+    .custom-control-input:checked ~ .custom-control-label {
+      &::before {
+        background-color: #ffffff;
+      }
+      &::after {
+        background-color: $value;
+      }
+    }
+  }
+}
+
+/*
+Mega Options
+
+Markup:
+<div class="row">
+  <div class="col-lg-6">
+    <div class="card card-bordered card-height-fluid">
+      <label class="card-body custom-option">
+        <span class="custom-option-control">
+          <div class="custom-control custom-control-outline-brand custom-radio">
+            <input type="radio" name="customMegaOptions" class="custom-control-input">
+            <span class="custom-control-label">
+              <span class="custom-option-head">
+                Standart Delivery
+              </span>
+              <span class="custom-option-body">
+                Estimated 14-20 Day Shipping ( Duties end taxes may be due upon delivery )
+              </span>
+            </span>
+          </div>
+        </span>
+      </label>
+    </div>
+  </div>
+  <div class="col-lg-6">
+    <div class="card card-bordered card-height-fluid">
+      <label class="card-body custom-option">
+        <span class="custom-option-control">
+          <div class="custom-control custom-control-outline-brand custom-radio">
+            <input type="radio" name="customMegaOptions" class="custom-control-input">
+            <span class="custom-control-label">
+              <span class="custom-option-head">
+                Fast Delivery
+              </span>
+              <span class="custom-option-body">
+                Estimated 2-5 Day Shipping ( Duties end taxes may be due upon delivery )
+              </span>
+            </span>
+          </div>
+        </span>
+      </label>
+    </div>
+  </div>
+</div>
+
+Weight: 13
+
+Styleguide Components.forms.custom-forms-mega-options
+ */
+
+.custom-option {
+  margin: 0;
+  .custom-control-label {
+    @include flexbox;
+    @include flex-direction(column);
+  }
+  .custom-option-head {
+    @include flexbox;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-top: -2px;
+  }
+  .custom-option-body {
+    margin-top: 5px;
+    color: $text-muted;
+  }
+}

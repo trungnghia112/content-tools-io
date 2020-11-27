@@ -1,0 +1,153 @@
+/*
+Badges
+
+Documentation and examples for badges, our small count and labeling component.
+
+Weight: 2
+
+Styleguide Components.badges
+ */
+
+/*
+Basic Examples
+
+Badges scale to match the size of the immediate parent element by using relative font sizing and em units.
+
+Markup:
+<h1>Example heading <span class="badge badge-secondary">New</span></h1>
+<h2>Example heading <span class="badge badge-secondary">New</span></h2>
+<h3>Example heading <span class="badge badge-secondary">New</span></h3>
+<h4>Example heading <span class="badge badge-secondary">New</span></h4>
+<h5>Example heading <span class="badge badge-secondary">New</span></h5>
+<h6>Example heading <span class="badge badge-secondary">New</span></h6>
+
+Weight: 1
+
+Styleguide Components.badges.basic
+ */
+
+/*
+Counter
+
+Badges can be used as part of links or buttons to provide a counter.
+
+Markup:
+<button type="button" class="btn btn-primary">
+  Notifications <span class="badge badge-light">4</span>
+  <span class="sr-only">unread messages</span>
+</button>
+
+Weight: 2
+
+Styleguide Components.badges.counter
+ */
+
+/*
+Contextual variations
+
+Badges can be used as part of links or buttons to provide a counter.
+
+Markup:
+<span class="badge badge-primary {{modifier_class}}">Primary</span>
+<span class="badge badge-secondary {{modifier_class}}">Secondary</span>
+<span class="badge badge-success {{modifier_class}}">Success</span>
+<span class="badge badge-danger {{modifier_class}}">Danger</span>
+<span class="badge badge-warning {{modifier_class}}">Warning</span>
+<span class="badge badge-info {{modifier_class}}">Info</span>
+<span class="badge badge-light {{modifier_class}}">Light</span>
+<span class="badge badge-dark {{modifier_class}}">Dark</span>
+<span class="badge badge-brand {{modifier_class}}">Brand</span>
+
+.badge-sm - A small badge.
+.badge-lg - A large badge.
+
+Weight: 3
+
+Styleguide Components.badges.contextual
+ */
+
+/*
+Pill badges
+
+Use the `.badge-pill` modifier class to make badges more rounded (with a larger border-radius and additional horizontal padding). Useful if you miss the badges from v3.
+
+Markup:
+<span class="badge badge-pill badge-primary {{modifier_class}}">Primary</span>
+<span class="badge badge-pill badge-secondary {{modifier_class}}">Secondary</span>
+<span class="badge badge-pill badge-success {{modifier_class}}">Success</span>
+<span class="badge badge-pill badge-danger {{modifier_class}}">Danger</span>
+<span class="badge badge-pill badge-warning {{modifier_class}}">Warning</span>
+<span class="badge badge-pill badge-info {{modifier_class}}">Info</span>
+<span class="badge badge-pill badge-light {{modifier_class}}">Light</span>
+<span class="badge badge-pill badge-dark {{modifier_class}}">Dark</span>
+<span class="badge badge-pill badge-brand {{modifier_class}}">Brand</span>
+
+.badge-sm - A small badge.
+.badge-lg - A large badge.
+
+Weight: 4
+
+Styleguide Components.badges.pill
+ */
+
+/*
+Links
+
+Using the contextual `.badge-*` classes on an <a> element quickly provide actionable badges with hover and focus states.
+
+Markup:
+<a href="#" class="badge badge-primary {{modifier_class}}">Primary</a>
+<a href="#" class="badge badge-secondary {{modifier_class}}">Secondary</a>
+<a href="#" class="badge badge-success {{modifier_class}}">Success</a>
+<a href="#" class="badge badge-danger {{modifier_class}}">Danger</a>
+<a href="#" class="badge badge-warning {{modifier_class}}">Warning</a>
+<a href="#" class="badge badge-info {{modifier_class}}">Info</a>
+<a href="#" class="badge badge-light {{modifier_class}}">Light</a>
+<a href="#" class="badge badge-dark {{modifier_class}}">Dark</a>
+<a href="#" class="badge badge-brand {{modifier_class}}">Brand</a>
+
+.badge-sm - A small badge.
+.badge-lg - A large badge.
+
+Weight: 5
+
+Styleguide Components.badges.links
+ */
+
+/*
+Dots
+
+Markup:
+<span class="badge badge-dot badge-primary"></span>
+<span class="badge badge-dot badge-secondary"></span>
+<span class="badge badge-dot badge-success"></span>
+<span class="badge badge-dot badge-danger"></span>
+<span class="badge badge-dot badge-warning"></span>
+<span class="badge badge-dot badge-info"></span>
+<span class="badge badge-dot badge-light"></span>
+<span class="badge badge-dot badge-dark"></span>
+<span class="badge badge-dot badge-brand"></span>
+
+Weight: 6
+
+Styleguide Components.badges.links
+ */
+
+.badge-sm {
+  padding: #{$badge-padding-y - 0.125} #{$badge-padding-x - 0.125};
+  @include font-size($badge-font-size - 15%);
+}
+
+.badge-lg {
+  padding: #{$badge-padding-y + 0.125} #{$badge-padding-x + 0.125};
+  @include font-size($badge-font-size + 15%);
+}
+
+.badge-dot:empty {
+  height: 6px;
+  width: 6px;
+  padding: 0;
+  border-radius: 50%;
+  display: inline-block;
+  vertical-align: middle;
+}

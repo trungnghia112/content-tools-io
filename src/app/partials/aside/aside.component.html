@@ -1,0 +1,54 @@
+<div class="card-news-header">
+  <div class="d-flex align-items-center">
+    <button class="btn btn-clean mr-3" (click)="asideService.hide()">
+      <i class="pi pi-chevron-left"></i>
+    </button>
+    <h4 class="m-0">Articles List</h4>
+  </div>
+  <button (click)="visibleFilter = !visibleFilter" class="btn btn-icon btn-outline-secondary" type="button">
+    <i class="pi pi-sliders-v"></i>
+  </button>
+</div>
+<div class="card-news-list">
+  <ng-container *ngIf="posts$ | async as postsList; else templateLoadingPosts">
+    <ng-container *ngIf="postsList.length;else templateNodata">
+      <div *ngFor="let item of postsList" class="card">
+        <img class="card-img-top" [src]="item.image_link" alt="" loading="lazy">
+        <div class="card-body">
+          <p class="mb-2 text-muted">
+            <app-partials-crawl-check-domain [link]="item.external_link"
+                                             [domainsData]="domainsData">
+            </app-partials-crawl-check-domain>
+            - {{ item.publication_timestamp | dateTimeAgo}}</p>
+          <h5 class="card-title">{{ item.headline }}</h5>
+          <div class="card-text mb-2" [innerHTML]="item.excerpt"></div>
+          <div class="py-2 my-3 border border-left-0 border-right-0">
+            <app-partials-article-reactions [data]="item.fb_data"></app-partials-article-reactions>
+          </div>
+          <div class="text-center">
+            <button (click)="onCreateImage(item)" class="btn btn-info">Create image</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #templateNodata>
+      No posts matched your criteria
+    </ng-template>
+  </ng-container>
+  <ng-template #templateLoadingPosts>
+    <div class="text-center">
+      <p-progressSpinner></p-progressSpinner>
+    </div>
+  </ng-template>
+</div>
+
+<p-sidebar [(visible)]="visibleFilter" appendTo="body" (onHide)="getData(publishFilter.bodyParams)">
+  <div class="sidebar-filters-wrap">
+    <div class="sidebar-filters-header">
+      <h3>Filters</h3>
+    </div>
+    <div class="sidebar-filters-content">
+      <app-publish-filter #publishFilter></app-publish-filter>
+    </div>
+  </div>
+</p-sidebar>

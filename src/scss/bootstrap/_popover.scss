@@ -1,0 +1,48 @@
+/*
+Popovers
+
+Documentation and examples for adding Bootstrap popovers, like those found in iOS, to any element on your site.
+
+Weight: 19
+
+Styleguide Components.popovers
+ */
+
+/*
+Basic
+
+Markup:
+<button type="button" class="btn btn-primary" data-toggle="popover" title="Popover title" data-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+
+Weight: 1
+
+Styleguide Components.popovers.basic
+ */
+.popover-header {
+  border-bottom-color: #ebedf2;
+}
+
+/*
+Four directions
+
+Four options are available: top, right, bottom, and left aligned.
+
+Markup:
+<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover on top
+</button>
+<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover on right
+</button>
+<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover on bottom
+</button>
+<button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+  Popover on left
+</button>
+
+Weight: 1
+
+Styleguide Components.popovers.directions
+ */

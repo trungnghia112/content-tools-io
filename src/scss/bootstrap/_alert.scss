@@ -1,0 +1,214 @@
+@mixin alert-elevate-variant($color) {
+  box-shadow: 0px 0px 13px 0px rgba($color, 0.1);
+}
+
+/*
+Alerts
+
+Provide contextual feedback messages for typical user actions with the handful of available and flexible alert messages.
+
+Weight: 1
+
+Styleguide Components.alerts
+ */
+
+/*
+Basic Alerts
+
+Alerts are available for any length of text, as well as an optional dismiss button
+
+Markup:
+<div class="alert alert-primary {{modifier_class}}" role="alert">
+  A simple primary alert—check it out!
+</div>
+<div class="alert alert-secondary {{modifier_class}}" role="alert">
+  A simple secondary alert—check it out!
+</div>
+<div class="alert alert-success {{modifier_class}}" role="alert">
+  A simple success alert—check it out!
+</div>
+<div class="alert alert-danger {{modifier_class}}" role="alert">
+  A simple danger alert—check it out!
+</div>
+<div class="alert alert-warning {{modifier_class}}" role="alert">
+  A simple warning alert—check it out!
+</div>
+<div class="alert alert-info {{modifier_class}}" role="alert">
+  A simple info alert—check it out!
+</div>
+<div class="alert alert-light {{modifier_class}}" role="alert">
+  A simple light alert—check it out!
+</div>
+<div class="alert alert-dark {{modifier_class}}" role="alert">
+  A simple dark alert—check it out!
+</div>
+<div class="alert alert-brand {{modifier_class}}" role="alert">
+  A simple brand alert—check it out!
+</div>
+
+.alert-sm - A small alert.
+.alert-lg - A large alert.
+
+Weight: 1
+
+Styleguide Components.alerts.basic
+ */
+.alert-light {
+  color: $body-color;
+}
+
+.alert-sm {
+  font-size: $btn-font-size-sm;
+  padding: #{$alert-padding-y - 0.25rem} #{$alert-padding-x - 0.25rem};
+}
+
+.alert-lg {
+  font-size: $btn-font-size-lg;
+  padding: #{$alert-padding-y + 0.25rem} #{$alert-padding-x + 0.25rem};
+}
+
+/*
+Additional content
+
+Alerts are available for any length of text, as well as an optional dismiss button
+
+Markup:
+<div class="alert alert-success" role="alert">
+  <h4 class="alert-heading">Well done!</h4>
+  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+  <hr>
+  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+</div>
+<div class="alert alert-danger" role="alert">
+  <h4 class="alert-heading">Got Issues!</h4>
+  <p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+  <hr>
+  <p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+</div>
+
+Weight: 2
+
+Styleguide Components.alerts.additional-content
+ */
+
+/*
+Dismissing
+
+Alerts are available for any length of text, as well as an optional dismiss button
+
+Markup:
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+Weight: 3
+
+Styleguide Components.alerts.dismissing
+ */
+
+/*
+With Icons
+
+With Icons
+
+Markup:
+<div class="alert alert-warning alert-dismissible" role="alert">
+  <div class="alert-content">
+    <div class="alert-icon">
+      <i class="fa fa-exclamation-circle"></i>
+    </div>
+    <div class="alert-text">A simple primary alert—check it out!</div>
+    <div class="alert-close">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+Weight: 4
+
+Styleguide Components.alerts.with-icons
+ */
+.alert-content {
+  @include flexbox;
+  @include align-items(stretch);
+
+  .alert-icon {
+    @include flexbox;
+    @include align-items(center);
+    font-size: 2.4rem;
+    margin-right: 10px;
+  }
+
+  .alert-text {
+    @include align-self(center);
+    @include flex(1);
+  }
+
+  .alert-dismissible & {
+    position: relative;
+    margin-right: -($close-font-size + $alert-padding-x * 2);
+    padding-right: $close-font-size + $alert-padding-x * 2;
+
+    .close {
+      @include center(false, true);
+    }
+  }
+}
+
+/*
+Elevated Alerts
+
+Various alerts styles.
+
+Markup:
+<div class="alert alert-primary alert-elevate {{modifier_class}}" role="alert">
+  A simple primary alert—check it out!
+</div>
+<div class="alert alert-secondary alert-elevate {{modifier_class}}" role="alert">
+  A simple secondary alert—check it out!
+</div>
+<div class="alert alert-success alert-elevate {{modifier_class}}" role="alert">
+  A simple success alert—check it out!
+</div>
+<div class="alert alert-danger alert-elevate {{modifier_class}}" role="alert">
+  A simple danger alert—check it out!
+</div>
+<div class="alert alert-warning alert-elevate {{modifier_class}}" role="alert">
+  A simple warning alert—check it out!
+</div>
+<div class="alert alert-info alert-elevate {{modifier_class}}" role="alert">
+  A simple info alert—check it out!
+</div>
+<div class="alert alert-light alert-elevate {{modifier_class}}" role="alert">
+  A simple light alert—check it out!
+</div>
+<div class="alert alert-dark alert-elevate {{modifier_class}}" role="alert">
+  A simple dark alert—check it out!
+</div>
+<div class="alert alert-brand alert-elevate {{modifier_class}}" role="alert">
+  A simple brand alert—check it out!
+</div>
+
+.alert-sm - A small alert.
+.alert-lg - A large alert.
+
+Weight: 5
+
+Styleguide Components.alerts.elevated
+ */
+.alert-elevate {
+  @include transition($transition-base);
+}
+
+@each $color, $value in $theme-colors {
+  .alert-#{$color} {
+    &.alert-elevate {
+      @include alert-elevate-variant($value);
+    }
+  }
+}

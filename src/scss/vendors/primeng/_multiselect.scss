@@ -1,0 +1,29 @@
+.p-multiselect .p-multiselect-label {
+  padding-top: calc(#{$input-padding-y} + 4px);
+  padding-bottom: calc(#{$input-padding-y} + 4px);
+  line-height: 1;
+}
+
+.p-multiselect-panel .p-multiselect-items .p-multiselect-item {
+  .p-checkbox {
+    @include flex(0 0 auto);
+  }
+}
+
+.multiselect-custom-country {
+  .country-item {
+    @include flexbox;
+    @include align-items(center);
+
+    img {
+      @include flex(0 0 auto);
+      margin-right: 5px;
+    }
+
+    div {
+      @include flex(1);
+      white-space: normal;
+      line-height: 1.1;
+    }
+  }
+}

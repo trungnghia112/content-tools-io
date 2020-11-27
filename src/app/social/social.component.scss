@@ -1,0 +1,96 @@
+/*
+@import "https://cdn.quilljs.com/1.3.6/quill.bubble.css";
+@import "~src/scss/core";
+
+.card-article-image-photo {
+  img {
+    touch-action: none;
+    user-select: none;
+  }
+}
+
+.card-article-image-item {
+  position: relative;
+
+  .card-article-image-text {
+    position: relative;
+    z-index: 1;
+    outline-style: none;
+    font-size: 1.75rem;
+    text-transform: uppercase;
+    min-height: 34px;
+    font-weight: bold;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    top: -5px;
+    right: -10px;
+    bottom: -5px;
+    left: -10px;
+    border: 2px dashed $primary;
+    opacity: 0;
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+    }
+  }
+}
+
+
+.card-article-image-form-logo {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  cursor: pointer;
+  border: 2px solid transparent;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  @include flexbox;
+  @include justify-content(center);
+  @include align-items(center);
+
+  img {
+    object-fit: contain;
+    width: 90%;
+    height: 90%;
+  }
+
+  &.active {
+    border-color: $primary;
+  }
+}
+
+.card-article-image-photo-wrap {
+  position: relative;
+}
+
+.card-article-image-logo {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+
+  img {
+    width: 100px;
+  }
+}*/
+
+.card-article-images-col {
+  position: relative;
+
+  .card-article-images-col-actions {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+  }
+}
+

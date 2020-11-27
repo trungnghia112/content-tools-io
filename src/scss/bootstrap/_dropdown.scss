@@ -1,0 +1,264 @@
+/*
+Dropdowns
+
+Toggle contextual overlays for displaying lists of links and more with the Bootstrap dropdown plugin.
+
+Markup:
+<div class="dropdown {{modifier_class}}">
+  <button type="button" class="btn btn-brand dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Action
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+</div>
+
+.dropdown-inline - Inline
+
+Weight: 9
+
+Styleguide Components.dropdowns
+ */
+
+.dropdown-menu {
+  box-shadow: $dropdown-box-shadow;
+}
+
+.dropdown-item {
+  i {
+    min-width: 18px;
+    text-align: center;
+    margin-right: 5px;
+  }
+}
+
+.dropdown-inline {
+  display: inline-block;
+}
+
+.dropdown-menu[x-placement^="right"] {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-menu[x-placement^="top"] {
+  bottom: 0;
+  top: auto;
+}
+
+/*
+Basic
+
+Example single danger button
+
+Markup:
+<div class="dropdown">
+  <button type="button" class="btn {{modifier_class}} dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Action
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+</div>
+
+.btn-primary - Primary.
+.btn-secondary - Secondary.
+.btn-success - Success.
+.btn-danger - Danger.
+.btn-warning - Warning.
+.btn-info - Info.
+.btn-light - Light.
+.btn-dark - Dark.
+.btn-link - Link.
+.btn-brand - Brand.
+
+Weight: 1
+
+Styleguide Components.dropdowns.basic
+ */
+
+/*
+Directions
+
+Trigger dropdown menus above elements by adding `{{modifier_class}}` to the parent element.
+
+Markup:
+<div class="dropdown {{modifier_class}}">
+  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Action
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">Separated link</a>
+  </div>
+</div>
+
+.dropup - Trigger dropdown menus above elements by adding `.dropup` to the parent element.
+.dropright - Trigger dropdown menus at the right of the elements by adding `.dropright` to the parent element.
+.dropleft - Trigger dropdown menus at the left of the elements by adding `.dropleft` to the parent element.
+
+Weight: 2
+
+Styleguide Components.dropdowns.directions
+ */
+
+/*
+Responsive alignment
+
+To align right the dropdown menu with the given breakpoint or larger, add `.dropdown-menu{-sm|-md|-lg|-xl}-right`.
+
+Markup:
+<div class="dropdown">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+    Left-aligned but right aligned when {{modifier_class}} screen
+  </button>
+  <div class="dropdown-menu {{modifier_class}}">
+    <button class="dropdown-item" type="button">Action</button>
+    <button class="dropdown-item" type="button">Another action</button>
+    <button class="dropdown-item" type="button">Something else here</button>
+  </div>
+</div>
+
+.dropdown-menu-sm-right - sm.
+.dropright-md-right - md.
+.dropleft-lg-right - lg.
+.dropleft-xl-right - xl.
+
+Weight: 3
+
+Styleguide Components.dropdowns.responsive-alignment
+ */
+
+/*
+Forms
+
+To align right the dropdown menu with the given breakpoint or larger, add `.dropdown-menu{-sm|-md|-lg|-xl}-right`.
+
+Markup:
+<div class="dropdown">
+  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+    Forms
+  </button>
+  <div class="dropdown-menu">
+    <form class="px-4 py-3">
+      <div class="form-group">
+        <label for="exampleDropdownFormEmail1">Email address</label>
+        <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+      </div>
+      <div class="form-group">
+        <label for="exampleDropdownFormPassword1">Password</label>
+        <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="dropdownCheck">
+          <label class="form-check-label" for="dropdownCheck">
+            Remember me
+          </label>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">New around here? Sign up</a>
+    <a class="dropdown-item" href="#">Forgot password?</a>
+  </div>
+</div>
+
+Weight: 4
+
+Styleguide Components.dropdowns.forms
+ */
+
+/*
+Single icon
+
+Markup:
+<div class="dropdown dropdown-inline">
+    <button type="button" class="btn btn-icon btn-clean" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-ellipsis-h"></i>
+    </button>
+    <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(32px, 33px, 0px);">
+        <a class="dropdown-item" href="#"><i class="fas fa-plus"></i> New Report</a>
+        <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Add Customer</a>
+        <a class="dropdown-item" href="#"><i class="fas fa-cloud-download-alt"></i> New Download</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a>
+    </div>
+</div>
+<div class="dropdown dropdown-inline">
+    <button type="button" class="btn btn-icon btn-circle btn-clean" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-ellipsis-h"></i>
+    </button>
+    <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(32px, 33px, 0px);">
+        <a class="dropdown-item" href="#"><i class="fas fa-plus"></i> New Report</a>
+        <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Add Customer</a>
+        <a class="dropdown-item" href="#"><i class="fas fa-cloud-download-alt"></i> New Download</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a>
+    </div>
+</div>
+<div class="dropdown dropdown-inline">
+    <button type="button" class="btn btn-icon btn-square btn-clean" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-ellipsis-v"></i>
+    </button>
+    <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(32px, 33px, 0px);">
+        <a class="dropdown-item" href="#"><i class="fas fa-plus"></i> New Report</a>
+        <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Add Customer</a>
+        <a class="dropdown-item" href="#"><i class="fas fa-cloud-download-alt"></i> New Download</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a>
+    </div>
+</div>
+<div class="dropdown dropdown-inline">
+    <button type="button" class="btn btn-icon btn-outline-brand" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-ellipsis-v"></i>
+    </button>
+    <div class="dropdown-menu dropdown-menu-right">
+        <a class="dropdown-item" href="#"><i class="fas fa-plus"></i> New Report</a>
+        <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Add Customer</a>
+        <a class="dropdown-item" href="#"><i class="fas fa-cloud-download-alt"></i> New Download</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a>
+    </div>
+</div>
+<div class="dropdown dropdown-inline">
+    <button type="button" class="btn btn-icon btn-outline-hover-brand" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-ellipsis-v"></i>
+    </button>
+    <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(32px, 33px, 0px);">
+        <a class="dropdown-item" href="#"><i class="fas fa-plus"></i> New Report</a>
+        <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Add Customer</a>
+        <a class="dropdown-item" href="#"><i class="fas fa-cloud-download-alt"></i> New Download</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a>
+    </div>
+</div>
+<div class="dropdown dropdown-inline">
+    <button type="button" class="btn btn-icon btn-brand" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-ellipsis-h"></i>
+    </button>
+    <div class="dropdown-menu dropdown-menu-right" x-placement="bottom-end" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(32px, 33px, 0px);">
+        <a class="dropdown-item" href="#"><i class="fas fa-plus"></i> New Report</a>
+        <a class="dropdown-item" href="#"><i class="fas fa-user"></i> Add Customer</a>
+        <a class="dropdown-item" href="#"><i class="fas fa-cloud-download-alt"></i> New Download</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a>
+    </div>
+</div>
+
+Weight: 4
+
+Styleguide Components.dropdowns.single-icon
+ */

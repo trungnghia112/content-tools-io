@@ -1,0 +1,73 @@
+<ul class="list-group list-group-flush">
+  <li class="list-group-item px-0">
+    <div class="d-flex justify-content-between align-items-center">
+      <h6 class="mb-2">Headline (optional)</h6>
+    </div>
+    <input [(ngModel)]="bodyParams.filterHeadline" type="text" class="form-control"
+           placeholder="tech, marketing, cat,...">
+  </li>
+  <li class="list-group-item px-0">
+    <div class="row row-sm">
+      <div class="col-sm-6 col">
+        <div class="d-flex justify-content-between align-items-center">
+          <h6 class="mb-2">Filter by Date</h6>
+        </div>
+        <p-dropdown appendTo="body" styleClass="d-flex" [options]="filterByDateData"
+                    [(ngModel)]="bodyParams.filterByDate"></p-dropdown>
+        <ng-container *ngIf="bodyParams.filterByDate === 'custom'">
+          <div class="my-3">
+            <p-calendar appendTo="body" styleClass="d-flex" placeholder="From date"
+                        [(ngModel)]="bodyParams.fromDate"></p-calendar>
+          </div>
+          <div>
+            <p-calendar appendTo="body" styleClass="d-flex" placeholder="To date"
+                        [(ngModel)]="bodyParams.toDate"></p-calendar>
+          </div>
+        </ng-container>
+      </div>
+      <div class="col-sm-6 col-auto">
+        <div class="d-flex justify-content-between align-items-center">
+          <h6 class="mb-2">Size <i class="flaticon2-information"
+                                   pTooltip="Max number of articles to be returned"
+                                   tooltipPosition="top"></i></h6>
+        </div>
+        <p-dropdown appendTo="body" styleClass="d-flex" [options]="sizeData"
+                    [(ngModel)]="bodyParams.size"></p-dropdown>
+      </div>
+    </div>
+  </li>
+  <li class="list-group-item px-0">
+    <div class="row row-sm">
+      <div class="col-6">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h6 class="mb-0">Content Type</h6>
+        </div>
+        <p-dropdown appendTo="body" styleClass="d-flex" [options]="contentTypeData"
+                    [(ngModel)]="bodyParams.content_type"></p-dropdown>
+      </div>
+      <div class="col-6">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h6 class="mb-0">Sort By <i class="flaticon2-information"
+                                      pTooltip="When the selected time-range is <= 25h, otherwise it will be fb_overperforming"
+                                      tooltipPosition="top"></i></h6>
+        </div>
+        <p-dropdown appendTo="body" styleClass="d-flex" [options]="sortByData"
+                    [(ngModel)]="bodyParams.sort_by"></p-dropdown>
+      </div>
+    </div>
+  
+  </li>
+  <li class="list-group-item px-0">
+    <div class="row row-sm">
+      <div class="col-12">
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <h6 class="mb-0">Page <i class="flaticon2-information"
+                                   pTooltip="Facebook page ID, username (usually the one that comes after ‘@’)"
+                                   tooltipPosition="top"></i></h6>
+        </div>
+        <p-chips styleClass="d-flex" [(ngModel)]="bodyParams.pages"></p-chips>
+      </div>
+    </div>
+  </li>
+</ul>
+<button (click)="articlesService.resetFilter()" class="btn btn-clean btn-block">Reset Filter</button>

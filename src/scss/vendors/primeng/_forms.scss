@@ -1,0 +1,21 @@
+.p-inputtext {
+  padding-top: calc(#{$input-padding-y} + 4px);
+  padding-bottom: calc(#{$input-padding-y} + 4px);
+}
+
+.ng-invalid {
+  &.ng-touched {
+    > .p-dropdown,
+    > .p-multiselect {
+      border-color: $form-feedback-invalid-color;
+    }
+  }
+}
+
+//.ng-valid {
+//  &.ng-touched {
+//    .p-dropdown, .p-multiselect {
+//      border-color: $form-feedback-valid-color;
+//    }
+//  }
+//}

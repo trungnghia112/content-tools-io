@@ -1,0 +1,111 @@
+.p-fileupload .p-fileupload-content {
+  background-color: #efefef;
+}
+
+.dropzone-profile-wrapper {
+  width: 120px;
+  position: relative;
+  overflow: hidden;
+
+  .p-fileupload-content {
+    padding: 0;
+    border-width: 0;
+    border-radius: 0;
+  }
+
+  .p-message {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    margin: 0;
+    border-radius: 0;
+    border-width: 0;
+
+    .p-message-wrapper {
+      padding: 5px;
+      margin: 0;
+      @include flex-direction(column);
+
+      .p-message-icon {
+        display: none;
+      }
+
+      span {
+        margin: 0;
+        padding: 0;
+        display: block;
+
+        &:not(.p-message-detail) {
+          display: none;
+        }
+      }
+
+      button {
+        display: none;
+      }
+    }
+  }
+
+  .p-fileupload-buttonbar {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+    background-color: transparent;
+    @include transition($transition-base);
+
+    .p-fileupload-choose {
+      background-color: rgba(#000, 0.5);
+      color: #ffffff;
+      text-align: center;
+      display: block;
+      padding: 8px 0;
+      border-width: 0;
+      border-radius: 0;
+      margin: 0;
+      outline-style: none !important;
+      box-shadow: none !important;
+
+      .p-button-icon {
+        display: block;
+        margin: 0;
+      }
+    }
+  }
+
+  &:hover, &.dropzone-profile-show-buttons {
+    .p-fileupload-buttonbar {
+      bottom: 0;
+    }
+  }
+
+  .p-fileupload-files ~ .dropzone-profile-img {
+    display: none;
+  }
+
+  .dropzone-profile-img {
+    width: 120px;
+    height: 120px;
+    position: relative;
+    margin: auto;
+
+    img {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      object-fit: contain;
+    }
+  }
+}

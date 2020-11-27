@@ -1,0 +1,615 @@
+/*
+Cards
+
+Bootstrap’s cards provide a flexible and extensible content container with multiple variants and options.
+
+Weight: 6
+
+Styleguide Components.cards
+ */
+
+/*
+Basic Cards
+
+Cards support a wide variety of content, including images, text, list groups, links, and more. Below are examples of what’s supported.
+
+Markup:
+<div class="row">
+  <div class="col-lg-3">
+    <div class="card {{modifier_class}}">
+      <img src="/dummy/media/products/product4.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-3">
+    <div class="card {{modifier_class}}">
+      <img src="/dummy/media/products/product4.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Some quick example text</p>
+        <a href="#" class="card-link">Card link</a>
+        <a href="#" class="card-link">Another link</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+.card-height-fluid - height-fluid
+
+Weight: 1
+
+Styleguide Components.cards.basic
+ */
+.card {
+  margin-bottom: 20px;
+}
+
+.card-height-fluid {
+  height: calc(100% - 20px);
+}
+
+/*
+List groups
+
+Create lists of content in a card with a flush list group.
+
+Markup:
+<div class="card mb-3" style="width: 18rem;">
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+  </ul>
+</div>
+<div class="card" style="width: 18rem;">
+  <img src="/dummy/media/products/product4.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Cras justo odio</li>
+    <li class="list-group-item">Dapibus ac facilisis in</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+
+Weight: 2
+
+Styleguide Components.cards.list-groups
+ */
+
+/*
+Header and footer
+
+Various button styles.
+
+Markup:
+<div class="card mb-3">
+  <div class="card-header {{modifier_class}}">
+    <h3 class="card-header-title">Title <small>small</small></h3>
+    <div class="card-header-toolbar">
+      <div class="btn-group">
+        <button class="btn btn-clean btn-icon" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-ellipsis-h"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>
+
+.card-header-lg - large head
+.card-header-sm - small head
+
+Weight: 3
+
+Styleguide Components.cards.list-groups
+ */
+
+.card {
+  border-width: 0;
+  @include box-shadow(0px 0px 13px 0px rgba(82, 63, 105, 0.05));
+}
+
+.card-header {
+  @include flexbox;
+  @include justify-content(space-between);
+  @include align-items(center);
+  color: #464457;
+  min-height: 60px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.card-header-toolbar {
+  > .btn + .dropdown,
+  > .btn + .btn {
+    margin-left: 5px;
+  }
+}
+
+.card-header-lg {
+  min-height: 80px;
+}
+
+.card-header-sm {
+  min-height: 40px;
+}
+
+.card-header-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+  @include flexbox;
+  @include align-items(center);
+  min-height: calc(#{$input-line-height * 1em} + #{$input-padding-y * 2} + #{$input-height-border});
+
+  small, .small {
+    color: #a7abc3;
+    padding-left: 8px;
+  }
+
+  i, .svg-inline--fa {
+    color: #a7abc3;
+    font-size: 1.3rem;
+    margin-right: 10px;
+  }
+}
+
+.card-header-toolbar {
+  width: 100%;
+
+  .card-header-title + & {
+    margin-left: auto;
+    width: auto;
+  }
+}
+
+.card-footer {
+  padding: $card-spacer-x;
+}
+
+/*
+Bordered Style
+
+Markup:
+<div class="card card-bordered mb-3">
+  <div class="card-header">
+    <h3 class="card-header-title"><i class="fas fa-chart-line"></i> Bordered Style <small>small</small></h3>
+    <div class="card-header-toolbar">
+      <button class="btn btn-clean btn-icon">
+        <i class="fas fa-search"></i>
+      </button>
+      <div class="btn-group">
+        <button class="btn btn-clean btn-icon" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-ellipsis-h"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+  <div class="card-footer">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        Portlet footer:
+      </div>
+      <div class="col-lg-6 text-right">
+        <button type="submit" class="btn btn-brand">Submit</button>
+        <span class="ml-2">or <a href="#" class="btn-link">Cancel</a></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+Weight: 4
+
+Styleguide Components.cards.bordered
+ */
+.card-bordered {
+  border-width: $card-border-width;
+  box-shadow: none;
+}
+
+/*
+Tabbed Style
+
+Markup:
+<div class="card mb-3">
+  <div class="card-header {{modifier_class}}">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#card_tab_0_1" role="tab" aria-selected="false">
+          <i class="fas fa-history"></i> Logs
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#card_tab_0_2" role="tab" aria-selected="false">
+          <i class="fas fa-comments"></i> Messages
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#card_tab_0_3" role="tab" aria-selected="true">
+          <i class="fas fa-cog"></i> Settings
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    <div class="tab-content">
+      <div class="tab-pane" id="card_tab_0_1">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
+      </div>
+      <div class="tab-pane" id="card_tab_0_2">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text.
+      </div>
+      <div class="tab-pane active" id="card_tab_0_3">
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-3">
+  <div class="card-header {{modifier_class}}">
+    <h3 class="card-header-title"><i class="fas fa-chart-line"></i> Tabbed Style <small>small</small></h3>
+    <div class="card-header-toolbar">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#card_tab_1_1" role="tab" aria-selected="false">
+            Logs
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#card_tab_1_2" role="tab" aria-selected="false">
+            Messages
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#card_tab_1_3" role="tab" aria-selected="true">
+            Settings
+          </a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+          <div class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="tab-content">
+      <div class="tab-pane" id="card_tab_1_1">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
+      </div>
+      <div class="tab-pane" id="card_tab_1_2">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text.
+      </div>
+      <div class="tab-pane active" id="card_tab_1_3">
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
+      </div>
+    </div>
+  </div>
+</div>
+
+.card-header-lg - large head
+.card-header-sm - small head
+
+Weight: 5
+
+Styleguide Components.cards.tabbed
+ */
+
+/*
+Pill Tabs
+
+Markup:
+<div class="card mb-3">
+  <div class="card-header {{modifier_class}}">
+    <h3 class="card-header-title"><i class="fas fa-chart-line"></i> Pill Tabs <small>small</small></h3>
+    <div class="card-header-toolbar">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link active" data-toggle="tab" href="#card_tab_2_1" role="tab">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#card_tab_2_2" role="tab">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="tab" href="#card_tab_2_3" role="tab">Link</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="tab-content">
+      <div class="tab-pane" id="card_tab_2_1">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
+      </div>
+      <div class="tab-pane" id="card_tab_2_2">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text.
+      </div>
+      <div class="tab-pane active" id="card_tab_2_3">
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
+      </div>
+    </div>
+  </div>
+</div>
+
+Weight: 6
+
+Styleguide Components.cards.tabbed-pill
+ */
+
+/*
+Color Tabs
+
+Markup:
+<div class="card mb-3">
+  <div class="card-header">
+    <ul class="nav nav-tabs {{modifier_class}}" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">
+          <i class="fas fa-history"></i> Logs
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-comments"></i> Messages
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">
+          <i class="fas fa-cog"></i> Settings
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="card-body">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled.
+  </div>
+</div>
+
+.nav-tabs-primary - Primary.
+.nav-tabs-secondary - Secondary.
+.nav-tabs-success - Success.
+.nav-tabs-danger - Danger.
+.nav-tabs-warning - Warning.
+.nav-tabs-info - Info.
+.nav-tabs-light - Light.
+.nav-tabs-dark - Dark.
+.nav-tabs-link - Link.
+.nav-tabs-brand - Brand.
+
+Weight: 7
+
+Styleguide Components.cards.tabbed-colors
+ */
+.card-header {
+  .nav-link {
+    color: #6c7293;
+  }
+
+  .nav-tabs {
+    border-bottom-width: 0;
+    margin-bottom: -1px;
+
+    .nav-item {
+      margin-bottom: 0;
+
+      & + .nav-item {
+        margin-left: 20px;
+      }
+    }
+
+    .nav-link {
+      border-width: 0;
+      border-radius: 0;
+      line-height: 19px;
+      padding: 20px 0;
+      border-bottom: 1px solid transparent;
+    }
+
+    .nav-link.active,
+    .nav-link:hover,
+    .nav-item.show .nav-link {
+      background-color: transparent;
+      border-bottom-color: $brand;
+      color: $brand;
+    }
+  }
+
+  &.card-header-lg {
+    .nav-tabs {
+      .nav-link {
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+    }
+  }
+
+  &.card-header-sm {
+    .nav-tabs {
+      .nav-link {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  .nav-pills {
+    .nav-item {
+      & + .nav-item {
+        margin-left: 10px;
+      }
+    }
+  }
+
+  &.card-header-lg {
+    .nav-pills {
+      .nav-link {
+        padding-top: $btn-padding-y-lg + 0.25;
+        padding-bottom: $btn-padding-y-lg + 0.25;
+      }
+    }
+  }
+
+  &.card-header-sm {
+    .nav-pills {
+      .nav-link {
+        padding-top: $btn-padding-y-sm;
+        padding-bottom: $btn-padding-y-sm;
+      }
+    }
+  }
+
+  @each $color, $value in $theme-colors {
+    .nav-tabs-#{$color} {
+      .nav-link.active,
+      .nav-link:hover,
+      .nav-item.show .nav-link {
+        @if ($color != 'light') {
+          border-bottom-color: $value;
+          color: $value;
+        } @else {
+          border-bottom-color: $gray-600;
+          color: $gray-600;
+        }
+      }
+    }
+  }
+}
+
+/*
+Tool Tabs
+
+Markup:
+<div class="card mb-3">
+  <div class="card-header">
+    <h3 class="card-header-title">Collapsed Portlet</h3>
+    <div class="card-header-toolbar">
+      <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample-1" role="button" aria-expanded="true" aria-controls="collapseExample">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </div>
+  </div>
+  <div class="collapse show" id="collapseExample-1">
+    <div class="card-body">
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+    </div>
+  </div>
+</div>
+<div class="card mb-3">
+  <div class="card-header">
+    <h3 class="card-header-title">Collapsed Portlet</h3>
+    <div class="card-header-toolbar">
+      <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample-2" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <i class="fas fa-chevron-down"></i>
+      </a>
+    </div>
+  </div>
+  <div class="collapse" id="collapseExample-2">
+    <div class="card-body">
+      Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.
+    </div>
+  </div>
+</div>
+
+Weight: 8
+
+Styleguide Components.cards.tabbed-tools
+ */
+
+/*
+Card groups
+
+Markup:
+<div class="{{modifier_class}} mb-3">
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+
+.card-group - normal responsive.
+.card-group-sm - small responsive.
+.card-group-md - medium responsive.
+.card-group-lg - large responsive.
+.card-group-xl - extra large responsive.
+
+Weight: 9
+
+Styleguide Components.cards.card-groups
+ */
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  .card-group-#{$breakpoint} {
+    @include card-group($breakpoint);
+  }
+}
+
+[class^="card-group"] {
+  @include box-shadow(0px 0px 13px 0px rgba(82, 63, 105, 0.05));
+
+  .card {
+    box-shadow: none;
+
+    & + .card {
+      border-left: $card-border-width solid $card-border-color;
+    }
+  }
+}

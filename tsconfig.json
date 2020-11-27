@@ -15,6 +15,26 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@core/*": [
+        "src/app/core/*"
+      ],
+      "@shared/*": [
+        "src/app/shared/*"
+      ],
+      "@partials/*": [
+        "src/app/views/partials/*"
+      ],
+      "@pages/*": [
+        "src/app/views/pages/*"
+      ],
+      "@env/*": [
+        "src/environments/*"
+      ],
+      "@testing/*": [
+        "src/testing/*"
+      ]
+    }
   }
 }

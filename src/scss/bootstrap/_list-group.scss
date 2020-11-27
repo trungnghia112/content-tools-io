@@ -1,0 +1,139 @@
+/*
+List group
+
+List groups are a flexible and powerful component for displaying a series of content. Modify and extend them to support just about any content within.
+
+Weight: 13
+
+Styleguide Components.list-group
+ */
+
+/*
+Basic example
+
+The most basic list group is an unordered list with list items and the proper classes. Build upon it with the options that follow, or with your own CSS as needed.
+
+Markup:
+<ul class="list-group">
+  <li class="list-group-item">Cras justo odio</li>
+  <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item">Morbi leo risus</li>
+  <li class="list-group-item">Porta ac consectetur ac</li>
+  <li class="list-group-item">Vestibulum at eros</li>
+</ul>
+
+Weight: 1
+
+Styleguide Components.list-group.basic
+ */
+
+/*
+Links and buttons
+
+Use `<a>`s or `<button>`s to create actionable list group items with hover, disabled, and active states by adding `.list-group-item-action`. We separate these pseudo-classes to ensure list groups made of non-interactive elements (like `<li>`s or `<div>`s) don’t provide a click or tap affordance.
+
+Markup:
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action active">
+    Cras justo odio
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
+  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Vestibulum at eros</a>
+</div>
+
+Weight: 2
+
+Styleguide Components.list-group.links
+ */
+
+/*
+Flush
+
+Add `.list-group-flush` to remove some borders and rounded corners to render list group items edge-to-edge in a parent container (e.g., cards).
+
+
+Markup:
+<ul class="list-group list-group-flush">
+  <li class="list-group-item">Cras justo odio</li>
+  <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item">Morbi leo risus</li>
+  <li class="list-group-item">Porta ac consectetur ac</li>
+  <li class="list-group-item">Vestibulum at eros</li>
+</ul>
+
+Weight: 3
+
+Styleguide Components.list-group.flush
+ */
+
+/*
+Horizontal
+
+Add `.list-group-flush` to remove some borders and rounded corners to render list group items edge-to-edge in a parent container (e.g., cards).
+
+
+Markup:
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item">Cras justo odio</li>
+  <li class="list-group-item">Dapibus ac facilisis in</li>
+  <li class="list-group-item">Morbi leo risus</li>
+</ul>
+
+Weight: 4
+
+Styleguide Components.list-group.horizontal
+ */
+
+/*
+Contextual classes
+
+Use contextual classes to style list items with a stateful background and color.
+
+Markup:
+<ul class="list-group">
+  <li class="list-group-item {{modifier_class}}">{{modifier_class}} list group item</li>
+</ul>
+
+.active - A simple active list group item.
+.disabled - A simple disabled list group item.
+.list-group-item-primary - A simple primary list group item.
+.list-group-item-secondary - A simple secondary list group item.
+.list-group-item-success - A simple success list group item.
+.list-group-item-danger - A simple danger list group item.
+.list-group-item-warning - A simple warning list group item.
+.list-group-item-info - A simple info list group item.
+.list-group-item-light - A simple light list group item.
+.list-group-item-dark - A simple dark list group item.
+
+Weight: 5
+
+Styleguide Components.list-group.contextual
+ */
+
+/*
+With badges
+
+Add badges to any list group item to show unread counts, activity, and more with the help of some utilities.
+
+Markup:
+<ul class="list-group">
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Cras justo odio
+    <span class="badge badge-primary badge-pill">14</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Dapibus ac facilisis in
+    <span class="badge badge-primary badge-pill">2</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-center">
+    Morbi leo risus
+    <span class="badge badge-primary badge-pill">1</span>
+  </li>
+</ul>
+
+Weight: 6
+
+Styleguide Components.list-group.badges
+ */

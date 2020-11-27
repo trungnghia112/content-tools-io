@@ -1,0 +1,15 @@
+.ui-paginator-icon {
+  @include flaticon2-icon;
+  &.pi-step-backward:before {
+    content: '\f1a2'; // flaticon2-fast-back
+  }
+  &.pi-caret-left:before {
+    content: '\f1a4'; // flaticon2-back
+  }
+  &.pi-caret-right:before {
+    content: '\f19d'; // flaticon2-next
+  }
+  &.pi-step-forward:before {
+    content: '\f1a1'; // flaticon2-fast-next
+  }
+}

@@ -1,0 +1,283 @@
+/*
+Input group
+
+Easily extend form controls by adding text, buttons, or button groups on either side of textual inputs, custom selects, and custom file inputs.
+
+Weight: 11
+
+Styleguide Components.input-group
+ */
+
+/*
+Basic example
+
+Place one add-on or button on either side of an input. You may also place one on both sides of an input. Remember to place `<label>`s outside the input group.
+
+Markup:
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">@</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+</div>
+<div class="input-group mb-3">
+  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+  <div class="input-group-append">
+    <span class="input-group-text" id="basic-addon2">@example.com</span>
+  </div>
+</div>
+<label for="basic-url">Your vanity URL</label>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon3">https://example.com/users/</span>
+  </div>
+  <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+</div>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">$</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+  <div class="input-group-append">
+    <span class="input-group-text">.00</span>
+  </div>
+</div>
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">With textarea</span>
+  </div>
+  <textarea class="form-control" aria-label="With textarea"></textarea>
+</div>
+
+Weight: 1
+
+Styleguide Components.input-group.basic
+ */
+
+/*
+Wrapping
+
+Input groups wrap by default via `flex-wrap: wrap` in order to accommodate custom form field validation within an input group. You may disable this with `.flex-nowrap`.
+
+Markup:
+<div class="input-group flex-nowrap">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="addon-wrapping">@</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+</div>
+
+Weight: 2
+
+Styleguide Components.input-group.wrapping
+ */
+
+/*
+Sizing
+
+Input groups wrap by default via `flex-wrap: wrap` in order to accommodate custom form field validation within an input group. You may disable this with `.flex-nowrap`.
+
+Markup:
+<div class="input-group {{modifier_class}}">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="inputGroup-{{modifier_class}}">{{modifier_class}}</span>
+  </div>
+  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-{{modifier_class}}">
+</div>
+
+.input-group-sm - Small
+.input-group-lg - Large
+
+Weight: 3
+
+Styleguide Components.input-group.sizing
+ */
+
+/*
+Checkboxes and Radios addons
+
+Place any checkbox or radio option within an input group’s addon instead of text.
+
+Markup:
+<div class="input-group mb-3 {{modifier_class}}">
+  <div class="input-group-prepend">
+    <div class="input-group-text">
+      <input type="checkbox" aria-label="Checkbox for following text input">
+    </div>
+  </div>
+  <input type="text" class="form-control" aria-label="Text input with checkbox">
+</div>
+<div class="input-group">
+  <div class="input-group-prepend {{modifier_class}}">
+    <div class="input-group-text">
+      <input type="radio" aria-label="Radio button for following text input">
+    </div>
+  </div>
+  <input type="text" class="form-control" aria-label="Text input with radio button">
+</div>
+
+.input-group-sm - Small
+.input-group-lg - Large
+
+Weight: 4
+
+Styleguide Components.input-group.checkboxes-radios
+ */
+
+/*
+Multiple inputs
+
+While multiple `<input>`s are supported visually, validation styles are only available for input groups with a single `<input>`.
+
+Markup:
+<div class="input-group {{modifier_class}}">
+  <div class="input-group-prepend">
+    <span class="input-group-text">First and last name</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control">
+  <input type="text" aria-label="Last name" class="form-control">
+</div>
+
+.input-group-sm - Small
+.input-group-lg - Large
+
+Weight: 4
+
+Styleguide Components.input-group.multiple-inputs
+ */
+
+/*
+Button addons
+
+While multiple `<input>`s are supported visually, validation styles are only available for input groups with a single `<input>`.
+
+Markup:
+<div class="input-group mb-3 {{modifier_class}}">
+  <div class="input-group-prepend">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon1">Button</button>
+  </div>
+  <input type="text" class="form-control" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
+</div>
+<div class="input-group mb-3 {{modifier_class}}">
+  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+  </div>
+</div>
+<div class="input-group mb-3 {{modifier_class}}">
+  <div class="input-group-prepend" id="button-addon3">
+    <button class="btn btn-outline-secondary" type="button">Button</button>
+    <button class="btn btn-outline-secondary" type="button">Button</button>
+  </div>
+  <input type="text" class="form-control" placeholder="" aria-label="Example text with two button addons" aria-describedby="button-addon3">
+</div>
+<div class="input-group {{modifier_class}}">
+  <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username with two button addons" aria-describedby="button-addon4">
+  <div class="input-group-append" id="button-addon4">
+    <button class="btn btn-outline-secondary" type="button">Button</button>
+    <button class="btn btn-outline-secondary" type="button">Button</button>
+  </div>
+</div>
+
+.input-group-sm - Small
+.input-group-lg - Large
+
+Weight: 5
+
+Styleguide Components.input-group.button-addons
+ */
+
+/*
+Buttons with dropdowns
+
+Markup:
+<div class="input-group mb-3 {{modifier_class}}">
+  <div class="input-group-prepend">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div role="separator" class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+  <input type="text" class="form-control" aria-label="Text input with dropdown button">
+</div>
+<div class="input-group {{modifier_class}}">
+  <input type="text" class="form-control" aria-label="Text input with dropdown button">
+  <div class="input-group-append">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="#">Action</a>
+      <a class="dropdown-item" href="#">Another action</a>
+      <a class="dropdown-item" href="#">Something else here</a>
+      <div role="separator" class="dropdown-divider"></div>
+      <a class="dropdown-item" href="#">Separated link</a>
+    </div>
+  </div>
+</div>
+
+.input-group-sm - Small
+.input-group-lg - Large
+
+Weight: 5
+
+Styleguide Components.input-group.button-dropdowns
+ */
+
+/*
+Input Icons
+
+Markup:
+<div class="input-group mb-3 {{modifier_class}}">
+  <div class="input-group-prepend input-group-inside">
+    <button class="btn btn-clean btn-icon" type="button">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+  <input type="text" class="form-control" aria-label="Text input with dropdown button">
+</div>
+<div class="input-group {{modifier_class}}">
+  <div class="input-group-append input-group-inside">
+    <button class="btn btn-clean btn-icon" type="button">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+  <input type="text" class="form-control" aria-label="Text input with dropdown button">
+</div>
+
+.input-group-sm - Small
+.input-group-lg - Large
+
+Weight: 6
+
+Styleguide Components.input-group.input-icons
+ */
+
+.input-group-inside {
+  position: absolute;
+  z-index: 10;
+  &.input-group-prepend {
+    left: 0;
+    right: auto;
+    ~ .form-control {
+      padding-left: calc(#{$input-padding-x/2} + #{$btn-line-height * 1em} + #{$btn-padding-y * 2} + #{$btn-border-width * 2});
+    }
+  }
+  &.input-group-append {
+    right: 0;
+    left: auto;
+    ~ .form-control {
+      padding-right: calc(#{$input-padding-x/2} + #{$btn-line-height * 1em} + #{$btn-padding-y * 2} + #{$btn-border-width * 2});
+    }
+  }
+}
+
+.input-group-sm .input-group-inside.input-group-prepend ~ .form-control {
+  padding-left: calc(#{$input-padding-x-sm/2} + #{$btn-line-height * 1em} + #{$btn-padding-y-sm * 2} + #{$btn-border-width * 2});
+}
+
+.input-group-lg .input-group-inside.input-group-prepend ~ .form-control {
+  padding-left: calc(#{$input-padding-x-lg/2} + #{$btn-line-height * 1em} + #{$btn-padding-y-lg * 2} + #{$btn-border-width * 2});
+}

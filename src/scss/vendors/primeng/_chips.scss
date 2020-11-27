@@ -1,0 +1,14 @@
+.p-chips .p-chips-multiple-container {
+  @include flex-wrap(wrap);
+
+  .p-chips-token {
+    margin-bottom: 0.5rem;
+    max-width: 100%;
+  }
+}
+
+.p-chips-multiple-container {
+  .d-flex > & {
+    width: 100%;
+  }
+}

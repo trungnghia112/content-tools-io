@@ -1,0 +1,67 @@
+/*
+Tooltips
+
+Documentation and examples for adding custom Bootstrap tooltips with CSS and JavaScript using CSS3 for animations and data-attributes for local title storage.
+
+Weight: 24
+
+Styleguide Components.tooltips
+ */
+.tooltip {
+  .tooltip-inner {
+    @include box-shadow(0px 0px 20px 0px rgba(0, 0, 0, 0.15));
+  }
+}
+
+/*
+Basic
+
+Hover over the buttons below to see the four tooltips directions: top, right, bottom, and left.
+
+Markup:
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+  Tooltip on top
+</button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">
+  Tooltip on right
+</button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">
+  Tooltip on bottom
+</button>
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">
+  Tooltip on left
+</button>
+
+Weight: 1
+
+Styleguide Components.tooltips.basic
+ */
+
+/*
+HTML Content
+
+Insert HTML into the tooltip:
+
+Markup:
+<button type="button" class="btn btn-secondary" data-toggle="tooltip" data-html="true" title="<em>Tooltip</em> <u>with</u> <b>HTML</b>">
+  Tooltip with HTML
+</button>
+
+Weight: 2
+
+Styleguide Components.tooltips.html-content
+ */
+
+.tooltip-box-wrap {
+  padding-right: 25px;
+  position: relative;
+
+  .tooltip-box-icon {
+    font-size: 20px;
+    color: $info;
+    position: absolute;
+    top: 9px;
+    right: 0;
+    line-height: 20px;
+  }
+}

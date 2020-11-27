@@ -1,0 +1,8 @@
+<ng-container *ngIf="type === 'circle';else templateLoadingBar">
+  <i *ngIf="size === 'md'" class="icon-24-loading"></i>
+  <i *ngIf="size === 'sm'" class="icon-12-loading"></i>
+</ng-container>
+<ng-template #templateLoadingBar>
+  <i *ngIf="size === 'md'" class="icon-16-loading-bar"></i>
+  <i *ngIf="size === 'sm'" class="icon-16-loading-bar-sm"></i>
+</ng-template>

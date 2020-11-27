@@ -1,0 +1,31 @@
+.p-panelmenu {
+  .p-panelmenu-panel .p-panelmenu-header > a {
+    border-radius: 0 !important;
+    background-color: transparent;
+    border-width: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .p-panelmenu-content {
+    border-width: 0;
+
+    .p-menuitem .p-menuitem-link {
+      padding-left: 1.5rem;
+    }
+  }
+}
+
+.p-dropdown-panel {
+  &.panel-countries-wrap {
+    max-width: 225px;
+
+    .p-dropdown-items {
+      .p-dropdown-item {
+        white-space: normal;
+      }
+    }
+  }
+}

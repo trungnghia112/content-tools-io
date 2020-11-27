@@ -1,0 +1,92 @@
+<div class="mx-auto" style="max-width: 640px;width: 100%;">
+  <div class="card card-article-image-wrap" id="html2canvas-el">
+    <app-theme-view #themeView [post]="articlesService.currentPost$ | async"
+                    [theme]="theme"
+                    [brand]="brand">
+      <ng-container *ngIf="logoEl.src">
+        <app-img-resizable [logo]="logoEl"></app-img-resizable>
+      </ng-container>
+    </app-theme-view>
+  </div>
+  <div class="container-fluid">
+    <ng-container *ngIf="pages$ | async as pages">
+      <div class="row my-4">
+        <div class="col-sm-3 col-md-2">
+          <label>Page</label>
+          <p-dropdown placeholder="Select a page" styleClass="d-flex"
+                      [options]="pages"
+                      [(ngModel)]="page"
+                      (onChange)="onSelectPage()"
+                      optionLabel="name"></p-dropdown>
+        </div>
+        <div class="col-sm-9 col-md-10" *ngIf="page && page.images">
+          <label>Logo</label>
+          <div class="d-flex flex-wrap align-items-center">
+            <button (click)="onSelectLogo(null)" class="btn btn-outline-danger btn-icon"><i class="pi pi-times"></i>
+            </button>
+            <img *ngFor="let image of page.images" (click)="onSelectLogo(image)" height="40" class="can-click ml-3"
+                 [src]="image"
+                 alt="">
+          </div>
+        
+        </div>
+      </div>
+    </ng-container>
+    <div class="form-group text-center">
+      <button (click)="asideService.show()" class="btn btn-outline-info mx-2">News</button>
+      <button (click)="onSaveImage()" class="btn btn-primary mx-2">Save</button>
+      <!--    <button (click)="onSaveTheme()" class="btn btn-min btn-primary">Save theme</button>-->
+    </div>
+    
+    <ng-container *ngIf="imageList.length">
+      <hr #generatedImages/>
+      <div class="card">
+        <div class="card-header d-block">
+          <div class="py-3">
+            <div class="form-group">
+              <input [(ngModel)]="messageBroadcasting" type="text" class="form-control"
+                     placeholder="">
+            </div>
+            <span (click)="messageBroadcasting = defaultMessageBroadcasting" class="badge can-click badge-secondary">
+            {{ defaultMessageBroadcasting }}
+            </span>
+            <div class="mt-3 text-center">
+              <button [disabled]="isBroadcasting" (click)="onBroadcast()" class="btn btn-primary">Broadcast</button>
+            </div>
+          </div>
+        
+        </div>
+        <div class="card-body">
+          <div class="row">
+            <div class="col-sm-4" *ngFor="let item of imageList; let i = index">
+              <div class="card-article-images-col">
+                <img (load)="scrollIntoView(generatedImages)" class="img-full" [src]="item.src" alt="">
+                <div class="card-article-images-col-actions">
+                  <a [href]="item.src" [download]="item.id" class="btn btn-success mx-2">
+                    <i class="pi pi-download"></i>
+                  </a>
+                  
+                  <div ngbDropdown placement="bottom-right" class="d-inline-block">
+                    <button class="btn btn-secondary" ngbDropdownToggle>
+                      <i class="pi pi-ellipsis-h"></i>
+                    </button>
+                    <div ngbDropdownMenu>
+                      <button (click)="onEdit(item)" type="button" ngbDropdownItem>
+                        <i class="pi pi-pencil"></i> Edit
+                      </button>
+                      <div class="dropdown-divider"></div>
+                      <button (click)="onDelete(item)" type="button" ngbDropdownItem>
+                        <i class="pi pi-trash"></i> Delete
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    </ng-container>
+  </div>
+</div>

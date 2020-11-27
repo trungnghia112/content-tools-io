@@ -8,9 +8,107 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="manifest" href="manifest.webmanifest">
   <meta name="theme-color" content="#1976d2">
+  
+  <!-- App CSS -->
+  <style>
+    :root {
+      --theme-color: #007bff;
+      --bg-color: #ffffff;
+    }
+    
+    html {
+      box-sizing: border-box;
+    }
+    
+    *,
+    *::before,
+    *::after {
+      box-sizing: inherit;
+    }
+    
+    .app-loading {
+      background: var(--bg-color);
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 9999;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    @keyframes bouncing-loader {
+      to {
+        opacity: 0.1;
+        transform: translate3d(0, -1rem, 0);
+      }
+    }
+    
+    .app-loading .bouncing-loader {
+      display: flex;
+      justify-content: center;
+    }
+    
+    .app-loading .bouncing-loader > div {
+      width: 1rem;
+      height: 1rem;
+      margin: 3rem 0.2rem;
+      background: var(--theme-color);
+      border-radius: 50%;
+      animation: bouncing-loader 0.6s infinite alternate;
+    }
+    
+    .app-loading .bouncing-loader > div:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+    
+    .app-loading .bouncing-loader > div:nth-child(3) {
+      animation-delay: 0.4s;
+    }
+  </style>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+      rel="stylesheet">
+  
+  <link rel='preload' href='assets/fonts/flaticon/flaticon.css' as='style'
+        onload="this.onload=null;this.rel='stylesheet'">
+  <link rel='preload' href='assets/fonts/flaticon2/flaticon.css' as='style'
+        onload="this.onload=null;this.rel='stylesheet'">
+  <link rel='preload' href='assets/fonts/line-awesome/css/line-awesome.css' as='style'
+        onload="this.onload=null;this.rel='stylesheet'">
+  <link rel='preload' href='assets/fonts/fontawesome/css/all.min.css' as='style'
+        onload="this.onload=null;this.rel='stylesheet'">
+  <link rel='preload' href='assets/third_party/primeicons/primeicons.css' as='style'
+        onload="this.onload=null;this.rel='stylesheet'">
+  <link rel='preload' href='assets/third_party/primeng/resources/primeng.min.css' as='style'
+        onload="this.onload=null;this.rel='stylesheet'">
+  <link rel='preload' href='assets/third_party/primeng/resources/themes/bootstrap4-light-blue/theme.css' as='style'
+        onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="assets/fonts/flaticon/flaticon.css">
+    <link rel="stylesheet" href="assets/fonts/flaticon2/flaticon.css">
+    <link rel="stylesheet" href="assets/fonts/line-awesome/css/line-awesome.css">
+    <link rel="stylesheet" href="assets/fonts/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="assets/third_party/primeicons/primeicons.css">
+    <link rel="stylesheet" href="assets/third_party/primeng/resources/primeng.min.css">
+    <link rel="stylesheet" href="assets/third_party/primeng/resources/themes/bootstrap4-light-blue/theme.css">
+  </noscript>
+  <link rel="stylesheet" href="assets/customs/style.css">
 </head>
 <body>
-  <app-root></app-root>
-  <noscript>Please enable JavaScript to continue using this application.</noscript>
+<div class="app-loading">
+  <div class="bouncing-loader">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<app-root></app-root>
+<noscript>Please enable JavaScript to continue using this application.</noscript>
+<!-- Optional JavaScript -->
+<!-- End Optional JavaScript -->
 </body>
 </html>

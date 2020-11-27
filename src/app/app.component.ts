@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AsideService } from './partials/aside/aside.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'content-tools-io';
+  title = 'content-tools';
+
+  constructor(public asideService: AsideService) {
+  }
 }

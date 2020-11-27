@@ -1,0 +1,560 @@
+@mixin button-label-variant($color) {
+  color: $color;
+  border-color: transparent;
+  @include gradient-bg(rgba($color, 0.1));
+
+  @include hover {
+    color: color-yiq($color);
+    @include gradient-bg($color);
+    border-color: $color;
+  }
+
+  &:focus,
+  &.focus {
+    // Avoid using mixin so we can pass custom focus shadow properly
+    @if $enable-shadows {
+      box-shadow: $btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($color), $color, 15%), .5);
+    } @else {
+      box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($color), $color, 15%), .5);
+    }
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+    color: $color;
+    background-color: rgba($color, 0.1);
+    border-color: rgba($color, 0.1);
+    // Remove CSS gradients if they're enabled
+    @if $enable-gradients {
+      background-image: none;
+    }
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: color-yiq($color);
+    background-color: $color;
+    @if $enable-gradients {
+      background-image: none; // Remove the gradient for the pressed/active state
+    }
+    border-color: $color;
+
+    &:focus {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        box-shadow: $btn-active-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($color), $color, 15%), .5);
+      } @else {
+        box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($color), $color, 15%), .5);
+      }
+    }
+  }
+}
+
+@mixin button-hover-variant($color) {
+  color: $body-color;
+  border-color: transparent;
+
+  @include hover {
+    color: color-yiq($color);
+    background-color: $color;
+    border-color: $color;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $body-color;
+    background-color: transparent;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: color-yiq($color);
+    background-color: $color;
+    border-color: $color;
+
+    &:focus {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        box-shadow: $btn-active-box-shadow, 0 0 0 $btn-focus-width rgba($color, .5);
+      } @else {
+        box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+      }
+    }
+  }
+}
+
+@mixin button-outline-hover-variant($color) {
+  color: $body-color;
+  border-color: transparent;
+
+  @include hover {
+    color: $color;
+    background-color: transparent;
+    border-color: $color;
+  }
+
+  &:focus,
+  &.focus {
+    box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+  }
+
+  &.disabled,
+  &:disabled {
+    color: $body-color;
+    background-color: transparent;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    color: color-yiq($color);
+    background-color: transparent;
+    border-color: $color;
+
+    &:focus {
+      // Avoid using mixin so we can pass custom focus shadow properly
+      @if $enable-shadows and $btn-active-box-shadow != none {
+        box-shadow: $btn-active-box-shadow, 0 0 0 $btn-focus-width rgba($color, .5);
+      } @else {
+        box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
+      }
+    }
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include box-shadow(none);
+  }
+  .btn-hover-#{$color} {
+    @include button-hover-variant($value);
+  }
+}
+
+@each $color, $value in $theme-colors {
+  .btn-outline-hover-#{$color} {
+    @include button-outline-hover-variant($value);
+  }
+}
+
+/*
+Buttons
+
+Use Bootstrap’s custom button styles for actions in forms, dialogs, and more with support for multiple sizes, states, and more.
+
+Weight: 4
+
+Styleguide Components.buttons
+ */
+.btn {
+  @include plain-hover-focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.btn-secondary {
+  background-color: #f7f8fa;
+  border: 1px solid #f7f8fa;
+  color: #74788d;
+  @include hover {
+    background-color: $brand;
+    border-color: $brand;
+    color: #ffffff;
+  }
+
+  &:focus,
+  &.focus {
+    background-color: $brand;
+    border-color: $brand;
+    color: #ffffff;
+  }
+
+  // Disabled comes first so active can properly restyle
+  &.disabled,
+  &:disabled {
+  }
+
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    &:focus {
+      background-color: $brand;
+      border-color: $brand;
+      color: #ffffff;
+    }
+  }
+}
+
+/*
+Basic Buttons
+
+Various button styles.
+
+Markup:
+<button type="button" class="btn btn-primary {{modifier_class}}">Primary</button>
+<button type="button" class="btn btn-secondary {{modifier_class}}">Secondary</button>
+<button type="button" class="btn btn-success {{modifier_class}}">Success</button>
+<button type="button" class="btn btn-danger {{modifier_class}}">Danger</button>
+<button type="button" class="btn btn-warning {{modifier_class}}">Warning</button>
+<button type="button" class="btn btn-info {{modifier_class}}">Info</button>
+<button type="button" class="btn btn-light {{modifier_class}}">Light</button>
+<button type="button" class="btn btn-dark {{modifier_class}}">Dark</button>
+<button type="button" class="btn btn-link {{modifier_class}}">Link</button>
+<button type="button" class="btn btn-brand {{modifier_class}}">Brand</button>
+<button type="button" class="btn btn-clean {{modifier_class}}">Clean</button>
+
+:hover - When user hovers over button.
+:focus - When button is focused.
+.btn-sm - A small button.
+.btn-lg - A large button.
+
+Weight: 1
+
+Styleguide Components.buttons.basic
+ */
+
+.btn-clean {
+  &:not(:disabled):not(.disabled):active,
+  &:not(:disabled):not(.disabled).active,
+  .show > &.dropdown-toggle {
+    &:focus {
+      background-color: rgba($brand, 0.1);
+      color: $brand;
+    }
+  }
+}
+
+.btn-min {
+  min-width: 100px;
+}
+
+/*
+Outline Buttons
+
+Various button styles.
+
+Markup:
+<button type="button" class="btn btn-outline-primary {{modifier_class}}">Primary</button>
+<button type="button" class="btn btn-outline-secondary {{modifier_class}}">Secondary</button>
+<button type="button" class="btn btn-outline-success {{modifier_class}}">Success</button>
+<button type="button" class="btn btn-outline-danger {{modifier_class}}">Danger</button>
+<button type="button" class="btn btn-outline-warning {{modifier_class}}">Warning</button>
+<button type="button" class="btn btn-outline-info {{modifier_class}}">Info</button>
+<button type="button" class="btn btn-outline-light {{modifier_class}}">Light</button>
+<button type="button" class="btn btn-outline-dark {{modifier_class}}">Dark</button>
+<button type="button" class="btn btn-outline-brand {{modifier_class}}">Brand</button>
+
+:hover - When user hovers over button.
+:focus - When button is focused.
+.btn-sm - A small button.
+.btn-lg - A large button.
+
+Weight: 2
+
+Styleguide Components.buttons.outline
+ */
+
+/*
+Hover Buttons
+
+Various button styles.
+
+Markup:
+<button type="button" class="btn btn-hover-primary {{modifier_class}}">Primary</button>
+<button type="button" class="btn btn-hover-secondary {{modifier_class}}">Secondary</button>
+<button type="button" class="btn btn-hover-success {{modifier_class}}">Success</button>
+<button type="button" class="btn btn-hover-danger {{modifier_class}}">Danger</button>
+<button type="button" class="btn btn-hover-warning {{modifier_class}}">Warning</button>
+<button type="button" class="btn btn-hover-info {{modifier_class}}">Info</button>
+<button type="button" class="btn btn-hover-light {{modifier_class}}">Light</button>
+<button type="button" class="btn btn-hover-dark {{modifier_class}}">Dark</button>
+<button type="button" class="btn btn-hover-brand {{modifier_class}}">Brand</button>
+
+:hover - When user hovers over button.
+:focus - When button is focused.
+.btn-sm - A small button.
+.btn-lg - A large button.
+
+Weight: 3
+
+Styleguide Components.buttons.hover
+ */
+
+/*
+Outline Hover Buttons
+
+Various button styles.
+
+Markup:
+<button type="button" class="btn btn-outline-hover-primary {{modifier_class}}">Primary</button>
+<button type="button" class="btn btn-outline-hover-secondary {{modifier_class}}">Secondary</button>
+<button type="button" class="btn btn-outline-hover-success {{modifier_class}}">Success</button>
+<button type="button" class="btn btn-outline-hover-danger {{modifier_class}}">Danger</button>
+<button type="button" class="btn btn-outline-hover-warning {{modifier_class}}">Warning</button>
+<button type="button" class="btn btn-outline-hover-info {{modifier_class}}">Info</button>
+<button type="button" class="btn btn-outline-hover-light {{modifier_class}}">Light</button>
+<button type="button" class="btn btn-outline-hover-dark {{modifier_class}}">Dark</button>
+<button type="button" class="btn btn-outline-hover-brand {{modifier_class}}">Brand</button>
+
+:hover - When user hovers over button.
+:focus - When button is focused.
+.btn-sm - A small button.
+.btn-lg - A large button.
+
+Weight: 4
+
+Styleguide Components.buttons.outline-hover
+ */
+
+/*
+Square Buttons
+
+Various button styles.
+
+Markup:
+<button type="button" class="btn btn-square btn-primary {{modifier_class}}">Primary</button>
+<button type="button" class="btn btn-square btn-outline-primary {{modifier_class}}">Primary</button>
+
+:hover - When user hovers over button.
+:focus - When button is focused.
+.btn-sm - A small button.
+.btn-lg - A large button.
+
+Weight: 5
+
+Styleguide Components.buttons.square
+ */
+.btn-square {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+
+/*
+Pill Buttons
+
+Various button styles.
+
+Markup:
+<button type="button" class="btn btn-pill btn-primary {{modifier_class}}">Primary</button>
+<button type="button" class="btn btn-pill btn-outline-primary {{modifier_class}}">Primary</button>
+
+:hover - When user hovers over button.
+:focus - When button is focused.
+.btn-sm - A small button.
+.btn-lg - A large button.
+
+Weight: 6
+
+Styleguide Components.buttons.pill
+ */
+.btn-pill {
+  -webkit-border-radius: $btn-padding-x-lg * 2;
+  -moz-border-radius: $btn-padding-x-lg * 2;
+  border-radius: $btn-padding-x-lg * 2;
+}
+
+/*
+Icon Only Buttons
+
+Various button styles.
+
+Markup:
+<button type="button" class="btn btn-primary btn-icon {{modifier_class}}"><i class="fa fa-dollar-sign"></i></button>
+<button type="button" class="btn btn-brand btn-icon {{modifier_class}}"><i class="fa fa-tag"></i></button>
+<button type="button" class="btn btn-secondary btn-icon {{modifier_class}}"><i class="fa fa-undo"></i></button>
+<button type="button" class="btn btn-outline-brand btn-icon {{modifier_class}}"><i class="fa fa-code"></i></button>
+<button type="button" class="btn btn-dark btn-icon {{modifier_class}}"><i class="fa fa-check"></i></button>
+<button type="button" class="btn btn-danger btn-icon {{modifier_class}}"><i class="fa fa-car"></i></button>
+<button type="button" class="btn btn-outline-hover-danger btn-icon {{modifier_class}}"><i class="fa fa-search"></i></button>
+
+:hover - When user hovers over button.
+:focus - When button is focused.
+.btn-sm - A small button.
+.btn-lg - A large button.
+
+Weight: 7
+
+Styleguide Components.buttons.icon-only
+ */
+
+/*
+Icon Circle Only Buttons
+
+Various button styles.
+
+Markup:
+<button type="button" class="btn btn-primary btn-icon btn-circle {{modifier_class}}"><i class="fa fa-dollar-sign"></i></button>
+<button type="button" class="btn btn-brand btn-icon btn-circle {{modifier_class}}"><i class="fa fa-tag"></i></button>
+<button type="button" class="btn btn-secondary btn-icon btn-circle {{modifier_class}}"><i class="fa fa-undo"></i></button>
+<button type="button" class="btn btn-outline-brand btn-icon btn-circle {{modifier_class}}"><i class="fa fa-code"></i></button>
+<button type="button" class="btn btn-dark btn-icon btn-circle {{modifier_class}}"><i class="fa fa-check"></i></button>
+<button type="button" class="btn btn-danger btn-icon btn-circle {{modifier_class}}"><i class="fa fa-car"></i></button>
+<button type="button" class="btn btn-outline-hover-danger btn-icon btn-circle {{modifier_class}}"><i class="fa fa-search"></i></button>
+
+:hover - When user hovers over button.
+:focus - When button is focused.
+.btn-sm - A small button.
+.btn-lg - A large button.
+
+Weight: 8
+
+Styleguide Components.buttons.icon-circle-only
+ */
+
+.btn-icon {
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  border-radius: 0.25rem;
+  min-width: calc(#{$btn-line-height * 1em} + #{$btn-padding-y * 2} + #{$btn-border-width * 2});
+  min-height: calc(#{$btn-line-height * 1em} + #{$btn-padding-y * 2} + #{$btn-border-width * 2});
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+
+  &.btn-sm {
+    min-width: calc(#{$btn-line-height-sm * 1em} + #{$btn-padding-y-sm * 2} + #{$btn-border-width * 2});
+    min-height: calc(#{$btn-line-height-sm * 1em} + #{$btn-padding-y-sm * 2} + #{$btn-border-width * 2});
+  }
+
+  &.btn-lg {
+    min-width: calc(#{$btn-line-height-lg * 1em} + #{$btn-padding-y-lg * 2} + #{$btn-border-width * 2});
+    min-height: calc(#{$btn-line-height-lg * 1em} + #{$btn-padding-y-lg * 2} + #{$btn-border-width * 2});
+  }
+
+  &.btn-circle {
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+  }
+
+  &.btn-square {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+  }
+}
+
+/*
+Elevated Buttons
+
+Various button styles.
+
+Markup:
+<button type="button" class="btn btn-primary btn-elevate {{modifier_class}}">Primary</button>
+<button type="button" class="btn btn-secondary btn-elevate {{modifier_class}}">Secondary</button>
+<button type="button" class="btn btn-success btn-elevate {{modifier_class}}">Success</button>
+<button type="button" class="btn btn-danger btn-elevate {{modifier_class}}">Danger</button>
+<button type="button" class="btn btn-warning btn-elevate {{modifier_class}}">Warning</button>
+<button type="button" class="btn btn-info btn-elevate {{modifier_class}}">Info</button>
+<button type="button" class="btn btn-light btn-elevate {{modifier_class}}">Light</button>
+<button type="button" class="btn btn-dark btn-elevate {{modifier_class}}">Dark</button>
+<button type="button" class="btn btn-link btn-elevate {{modifier_class}}">Link</button>
+<button type="button" class="btn btn-brand btn-elevate {{modifier_class}}">Brand</button>
+
+:hover - When user hovers over button.
+:focus - When button is focused.
+.btn-sm - A small button.
+.btn-lg - A large button.
+
+Weight: 9
+
+Styleguide Components.buttons.elevated
+ */
+.btn-elevate {
+  @include transition($transition-base);
+}
+
+.btn-elevate {
+  @each $color, $value in $theme-colors {
+    &.btn-#{$color} {
+      box-shadow: 0 4px 15px 0 rgba($value, 0.15);
+    }
+    &.btn-outline-#{$color} {
+      box-shadow: 0 4px 15px 0 rgba($value, 0.15);
+    }
+  }
+}
+
+/*
+Elevated Effect Buttons
+
+Various button styles.
+
+Markup:
+<button type="button" class="btn btn-primary btn-elevate btn-elevate-air {{modifier_class}}">Primary</button>
+<button type="button" class="btn btn-secondary btn-elevate btn-elevate-air {{modifier_class}}">Secondary</button>
+<button type="button" class="btn btn-success btn-elevate btn-elevate-air {{modifier_class}}">Success</button>
+<button type="button" class="btn btn-danger btn-elevate btn-elevate-air {{modifier_class}}">Danger</button>
+<button type="button" class="btn btn-warning btn-elevate btn-elevate-air {{modifier_class}}">Warning</button>
+<button type="button" class="btn btn-info btn-elevate btn-elevate-air {{modifier_class}}">Info</button>
+<button type="button" class="btn btn-light btn-elevate btn-elevate-air {{modifier_class}}">Light</button>
+<button type="button" class="btn btn-dark btn-elevate btn-elevate-air {{modifier_class}}">Dark</button>
+<button type="button" class="btn btn-link btn-elevate btn-elevate-air {{modifier_class}}">Link</button>
+<button type="button" class="btn btn-brand btn-elevate btn-elevate-air {{modifier_class}}">Brand</button>
+
+:hover - When user hovers over button.
+:focus - When button is focused.
+.btn-sm - A small button.
+.btn-lg - A large button.
+
+Weight: 10
+
+Styleguide Components.buttons.elevated-effect
+ */
+.btn-elevate-air {
+  @include hover {
+    @include transform(translate(0, -4px));
+  }
+}
+
+/*
+Label Style
+
+Various button styles.
+
+Markup:
+<button type="button" class="btn btn-label-primary {{modifier_class}}">Primary</button>
+<button type="button" class="btn btn-label-secondary {{modifier_class}}">Secondary</button>
+<button type="button" class="btn btn-label-success {{modifier_class}}">Success</button>
+<button type="button" class="btn btn-label-danger {{modifier_class}}">Danger</button>
+<button type="button" class="btn btn-label-warning {{modifier_class}}">Warning</button>
+<button type="button" class="btn btn-label-info {{modifier_class}}">Info</button>
+<button type="button" class="btn btn-label-light {{modifier_class}}">Light</button>
+<button type="button" class="btn btn-label-dark {{modifier_class}}">Dark</button>
+<button type="button" class="btn btn-label-link {{modifier_class}}">Link</button>
+<button type="button" class="btn btn-label-brand {{modifier_class}}">Brand</button>
+
+:hover - When user hovers over button.
+:focus - When button is focused.
+.btn-sm - A small button.
+.btn-lg - A large button.
+
+Weight: 11
+
+Styleguide Components.buttons.label
+ */
+
+@each $color, $value in $theme-colors {
+  .btn-label-#{$color} {
+    @include button-label-variant($value);
+  }
+}

@@ -1,0 +1,591 @@
+/*
+Tables
+
+Documentation and examples for opt-in styling of tables (given their prevalent use in JavaScript plugins) with Bootstrap.
+
+Weight: 5
+
+Styleguide Content.tables
+ */
+
+.table {
+  th,
+  td {
+    vertical-align: middle;
+  }
+
+  thead {
+    th, td {
+      border-bottom-width: $table-border-width;
+      padding-top: $table-cell-padding + .25rem;
+      padding-bottom: $table-cell-padding + .25rem;
+    }
+  }
+
+  &:not(.table-bordered) thead {
+    th, td {
+      border-top-width: 0;
+    }
+  }
+
+  tbody + tbody {
+    border-top-width: $table-border-width;
+  }
+}
+
+.card-body-fit {
+  margin-left: -$card-spacer-x;
+  margin-right: -$card-spacer-x;
+
+  .table {
+    thead, tbody {
+      th, td {
+        &:first-child {
+          padding-left: $card-spacer-x;
+        }
+
+        &:last-child {
+          padding-right: $card-spacer-x;
+        }
+      }
+    }
+  }
+}
+
+.bg-table-row {
+  background-color: #f8f9fa;
+}
+
+/*
+Basic
+
+Using the most basic table markup
+
+Markup:
+<table class="table {{modifier_class}}">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+<div class="card mb-3">
+  <div class="card-header">
+    <h3 class="card-header-title">Table</h3>
+    <div class="card-header-toolbar">
+      <button class="btn btn-brand" type="button">
+        <i class="flaticon2-plus"></i> Add new
+      </button>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lg-6">
+        <form>
+          <div class="form-row">
+            <div class="form-group col-lg-6">
+              <div class="input-group">
+                <div class="input-group-append input-group-inside">
+                  <button class="btn btn-clean btn-icon" type="button">
+                    <i class="flaticon2-search-1"></i>
+                  </button>
+                </div>
+                <input type="text" class="form-control" placeholder="Search...">
+              </div>
+            </div>
+            <div class="form-group col-lg-3">
+              <select class="custom-select">
+                <option selected>Status</option>
+                <option value="1">Live</option>
+                <option value="2">Die</option>
+              </select>
+            </div>
+            <div class="form-group col-lg-3">
+              <select class="custom-select">
+                <option selected>Type</option>
+                <option value="1">Normal</option>
+                <option value="2">Pro</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="card-body-fit">
+      <table class="table {{modifier_class}}">
+        <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+.table-dark - dark backgrounds.
+.table-light - light backgrounds.
+
+Weight: 1
+
+Styleguide Content.tables.basic
+ */
+
+/*
+Table head options
+
+Similar to tables and dark tables, use the modifier classes `.thead-light` or `.thead-dark` to make `<thead>`s appear light or dark gray.
+
+Markup:
+<table class="table">
+  <thead class="{{modifier_class}}">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+.thead-dark - dark thead.
+.thead-light - light thead.
+
+Weight: 2
+
+Styleguide Content.tables.table-head
+ */
+
+/*
+Striped rows
+
+Use `.table-striped` to add zebra-striping to any table row within the `<tbody>`.
+
+Markup:
+<table class="table table-striped {{modifier_class}}">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+.table-dark - dark backgrounds.
+.table-light - light backgrounds.
+
+Weight: 3
+
+Styleguide Content.tables.striped-rows
+ */
+
+/*
+Bordered table
+
+Add `.table-bordered` for borders on all sides of the table and cells.
+
+Markup:
+<table class="table table-bordered {{modifier_class}}">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+.table-dark - dark backgrounds.
+.table-light - light backgrounds.
+
+Weight: 4
+
+Styleguide Content.tables.bordered
+ */
+
+/*
+Borderless table
+
+Add `.table-borderless` for a table without borders.
+
+Markup:
+<table class="table table-borderless {{modifier_class}}">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+.table-dark - dark backgrounds.
+.table-light - light backgrounds.
+
+Weight: 5
+
+Styleguide Content.tables.borderless
+ */
+
+/*
+Hoverable rows
+
+Add `.table-hover` to enable a hover state on table rows within a `<tbody>`.
+
+Markup:
+<table class="table table-hover {{modifier_class}}">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+.table-dark - dark backgrounds.
+.table-light - light backgrounds.
+
+Weight: 6
+
+Styleguide Content.tables.hoverable-rows
+ */
+
+/*
+Small table
+
+Add .table-sm to make tables more compact by cutting cell padding in half.
+
+Markup:
+<table class="table table-sm {{modifier_class}}">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td colspan="2">Larry the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+.table-dark - dark backgrounds.
+.table-light - light backgrounds.
+
+Weight: 7
+
+Styleguide Content.tables.small-table
+ */
+
+/*
+Contextual classes
+
+Use contextual classes to color table rows or individual cells.
+
+Markup:
+<!-- On rows -->
+<table class="table">
+  <tbody>
+    <tr class="{{modifier_class}}">
+      <td>{{modifier_class}}</td>
+      <td>{{modifier_class}}</td>
+    </tr>
+  </tbody>
+</table>
+<!-- On cells (`td` or `th`) -->
+<table class="table">
+  <tbody>
+    <tr>
+      <td class="{{modifier_class}}">{{modifier_class}}</td>
+      <td class="{{modifier_class}}">{{modifier_class}}</td>
+    </tr>
+  </tbody>
+</table>
+
+.table-active - active table.
+.table-primary - primary table.
+.table-secondary - secondary table.
+.table-success - success table.
+.table-danger - danger table.
+.table-warning - warning table.
+.table-info - info table.
+.table-light - light table.
+.table-dark - dark table.
+.table-brand - brand table.
+.bg-active - active backgrounds.
+.bg-primary - primary backgrounds.
+.bg-secondary - secondary backgrounds.
+.bg-success - success backgrounds.
+.bg-danger - danger backgrounds.
+.bg-warning - warning backgrounds.
+.bg-info - info backgrounds.
+.bg-light - light backgrounds.
+.bg-dark - dark backgrounds.
+.bg-brand - brand backgrounds.
+
+Weight: 8
+
+Styleguide Content.tables.contextual-classes
+ */
+
+/*
+Captions
+
+A `<caption>` functions like a heading for a table. It helps users with screen readers to find a table and understand what it’s about and decide if they want to read it.
+
+Markup:
+<table class="table">
+  <caption>List of users</caption>
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table>
+
+Weight: 9
+
+Styleguide Content.tables.captions
+ */
+
+/*
+Responsive tables
+
+Responsive tables allow tables to be scrolled horizontally with ease. Make any table responsive across all viewports by wrapping a `.table` with `.table-responsive`. Or, pick a maximum breakpoint with which to have a responsive table up to by using `.table-responsive{-sm|-md|-lg|-xl}`.
+
+Markup:
+<div class="{{modifier_class}}">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Table heading</th>
+        <th scope="col">Table heading</th>
+        <th scope="col">Table heading</th>
+        <th scope="col">Table heading</th>
+        <th scope="col">Table heading</th>
+        <th scope="col">Table heading</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+        <td>Table cell</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+.table-responsive  - default.
+.table-responsive-sm - small.
+.table-responsive-md - medium.
+.table-responsive-lg - large.
+.table-responsive-xl - extra large.
+
+Weight: 10
+
+Styleguide Content.tables.responsive
+ */

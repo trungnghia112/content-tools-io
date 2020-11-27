@@ -1,0 +1,19 @@
+.p-selectbutton .p-button {
+  background-color: #ffffff;
+  color: $secondary;
+  border-color: $secondary;
+  box-shadow: none;
+  outline-style: none;
+
+  &:not(.p-disabled):not(.p-highlight):hover {
+    background-color: lighten($primary, 10);
+    border-color: $primary;
+    color: #ffffff;
+  }
+
+  &.p-highlight, &.p-highlight:hover {
+    background-color: $primary;
+    border-color: $primary;
+    color: #ffffff;
+  }
+}

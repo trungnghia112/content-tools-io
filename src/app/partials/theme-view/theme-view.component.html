@@ -1,0 +1,42 @@
+<div *ngIf="post" class="card-news" [style]="cssVar">
+  <div class="card-news-img-wrap"
+       [ngClass]="{'card-news-img-wrap-logo': !imageUrl}"
+       [ngStyle]="{
+                'background-image': (imageUrl) ? 'url(' + imageUrl + ')' : 'url(assets/images/7amnews/logo.png)'
+            }">
+    <div class="card-news-img-content">
+      <div class="card-news-logo-wrap">
+        <div class="card-news-logo-content">
+          <img *ngIf="brand?.logo" [src]="brand?.logo" alt="">
+        </div>
+      </div>
+    </div>
+    <ng-content></ng-content>
+  </div>
+  <div class="card-news-body">
+    <div class="card-news-body-bg">
+      <!--<img src="assets/images/7amnews/logo-transparent.png" alt="">-->
+    </div>
+    <div class="card-news-body-content">
+      <div class="card-news-title">
+        <div class="card-news-title-top-line"></div>
+        <div class="card-news-title-span">
+          <quill-editor [modules]="modules"
+                        [(ngModel)]="post.headline"
+                        format="html" sanitize="true"
+                        theme="bubble">
+          </quill-editor>
+        </div>
+        <div class="card-news-title-bottom-line"></div>
+      </div>
+      
+      <div class="card-news-text">
+        <quill-editor [modules]="modules"
+                      [(ngModel)]="htmlContent"
+                      format="html" sanitize="true"
+                      theme="bubble">
+        </quill-editor>
+      </div>
+    </div>
+  </div>
+</div>

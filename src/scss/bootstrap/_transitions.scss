@@ -1,0 +1,231 @@
+/*
+Collapse
+
+Toggle the visibility of content across your project with a few classes and our JavaScript plugins.
+
+Weight: 8
+
+Styleguide Components.collapse
+ */
+
+/*
+Accordion
+
+Using the card component, you can extend the default collapse behavior to create an accordion. To properly achieve the accordion style, be sure to use `.accordion` as a wrapper.
+
+Markup:
+<div class="accordion" id="accordionExample1">
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <div class="card-title collapsed" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="false" aria-controls="collapseOne1">
+        Latest Orders
+      </div>
+    </div>
+    <div id="collapseOne1" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample1" style="">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingTwo">
+      <div class="card-title collapsed" data-toggle="collapse" data-target="#collapseTwo1" aria-expanded="false" aria-controls="collapseTwo1">
+        Product Updates
+      </div>
+    </div>
+    <div id="collapseTwo1" class="collapse" aria-labelledby="headingTwo1" data-parent="#accordionExample1">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingThree1">
+      <div class="card-title collapsed" data-toggle="collapse" data-target="#collapseThree1" aria-expanded="false" aria-controls="collapseThree1">
+        Pending Items
+      </div>
+    </div>
+    <div id="collapseThree1" class="collapse" aria-labelledby="headingThree1" data-parent="#accordionExample1">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
+
+Weight: 1
+
+Styleguide Components.collapse.accordion
+ */
+
+[aria-expanded="true"] {
+  .fa-chevron-up {
+    @include transform(rotate(180deg));
+  }
+}
+
+[aria-expanded="false"] {
+  .fa-chevron-down {
+    @include transform(rotate(180deg));
+  }
+}
+
+.accordion {
+  > .card {
+    margin: 0;
+    box-shadow: none;
+    border-width: $card-border-width;
+
+    &:first-of-type {
+      @include border-top-radius($card-border-radius);
+    }
+    &:last-of-type {
+      @include border-bottom-radius($card-border-radius);
+      border-bottom: $card-border-width solid $card-border-color;
+    }
+  }
+  .card-header {
+    margin: 0;
+    padding: 0;
+    border-bottom-width: 0;
+    background-color: #f7f8fa;
+    min-height: auto;
+    .card-title {
+      position: relative;
+      margin: 0;
+      padding: $card-spacer-y $card-spacer-x;
+      width: 100%;
+      cursor: pointer;
+      color: #6c7293;
+      font-weight: 500;
+      font-size: 1.1rem;
+      @include flexbox;
+      @include align-items(center);
+      > i {
+        margin-right: 8px;
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+/*
+Light Style
+
+Using the card component, you can extend the default collapse behavior to create an accordion. To properly achieve the accordion style, be sure to use `.accordion` as a wrapper.
+
+Markup:
+<div class="accordion accordion-light {{modifier_class}}" id="accordionLightExample1">
+  <div class="card">
+    <div class="card-header" id="headingLightOne">
+      <div class="card-title collapsed" data-toggle="collapse" data-target="#collapseLightOne1{{modifier_class}}" aria-expanded="false" aria-controls="collapseLightOne1">
+        <i class="fas fa-history"></i> Latest Orders
+      </div>
+    </div>
+    <div id="collapseLightOne1{{modifier_class}}" class="collapse" aria-labelledby="headingLightOne" data-parent="#accordionLightExample1" style="">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingLightTwo">
+      <div class="card-title collapsed" data-toggle="collapse" data-target="#collapseLightTwo1{{modifier_class}}" aria-expanded="false" aria-controls="collapseLightTwo1">
+        <i class="fas fa-sync-alt"></i> Product Updates
+      </div>
+    </div>
+    <div id="collapseLightTwo1{{modifier_class}}" class="collapse" aria-labelledby="headingLightTwo" data-parent="#accordionLightExample1">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-header" id="headingLightThree">
+      <div class="card-title collapsed" data-toggle="collapse" data-target="#collapseLightThree1{{modifier_class}}" aria-expanded="false" aria-controls="collapseLightThree1">
+        <i class="fas fa-spinner fa-spin"></i> Pending Items
+      </div>
+    </div>
+    <div id="collapseLightThree1{{modifier_class}}" class="collapse" aria-labelledby="headingLightThree" data-parent="#accordionLightExample1">
+      <div class="card-body">
+        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+</div>
+
+.accordion-toggle-arrow - Arrow
+.accordion-toggle-plus - Arrow
+
+Weight: 1
+
+Styleguide Components.collapse.accordion-light
+ */
+.accordion-light {
+  .card {
+    background-color: transparent;
+    border-width: 0;
+    & + .card {
+      border-top: $card-border-width solid $card-border-color;
+    }
+  }
+  .card-header {
+    background-color: transparent;
+    .card-title {
+      padding: 1rem 1rem 1rem 0;
+      color: #a1abc3;
+    }
+    [aria-expanded="true"] {
+      color: $brand;
+    }
+  }
+  .card-body {
+    padding: 0;
+    margin-bottom: $card-spacer-y;
+  }
+}
+
+.accordion-toggle-arrow,
+.accordion-toggle-plus {
+  .card-header {
+    .card-title {
+      padding-right: $card-spacer-x + 1.5rem;
+      &:after {
+        @include center(false, true);
+        right: $card-spacer-x;
+        @include fontawesome-icon();
+        @include fontawesome-icon-fas();
+      }
+    }
+  }
+}
+
+.accordion-toggle-arrow {
+  .card-header {
+    [aria-expanded="false"] {
+      &:after {
+        content: fa-content($fa-var-chevron-right);
+      }
+    }
+    [aria-expanded="true"] {
+      &:after {
+        content: fa-content($fa-var-chevron-down);
+      }
+    }
+  }
+}
+
+.accordion-toggle-plus {
+  .card-header {
+    [aria-expanded="false"] {
+      &:after {
+        content: fa-content($fa-var-plus);
+      }
+    }
+    [aria-expanded="true"] {
+      &:after {
+        content: fa-content($fa-var-minus);
+      }
+    }
+  }
+}

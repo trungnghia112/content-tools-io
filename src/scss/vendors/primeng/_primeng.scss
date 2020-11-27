@@ -1,0 +1,340 @@
+/*
+Primeng
+
+PrimeNG is a collection of rich UI components for Angular.
+
+Weight: 30
+
+Styleguide Primeng
+ */
+/*
+widget
+
+Styleguide Primeng.widget
+ */
+@import "widget";
+/*
+type
+
+Styleguide Primeng.type
+ */
+@import "type";
+/*
+forms
+
+Styleguide Primeng.forms
+ */
+@import "forms";
+/*
+inputswitch
+
+Styleguide Primeng.inputswitch
+ */
+@import "inputswitch";
+/*
+autocomplete
+
+Styleguide Primeng.autocomplete
+ */
+@import "autocomplete";
+/*
+chips
+
+Styleguide Primeng.chips
+ */
+@import "chips";
+/*
+dropdown
+
+Styleguide Primeng.dropdown
+ */
+@import "dropdown";
+/*
+listbox
+
+Styleguide Primeng.listbox
+ */
+@import "listbox";
+/*
+editor
+
+Styleguide Primeng.editor
+ */
+@import "editor";
+/*
+spinner
+
+Styleguide Primeng.spinner
+ */
+@import "spinner";
+/*
+datepicker
+
+Styleguide Primeng.datepicker
+ */
+@import "datepicker";
+/*
+calendar
+
+Styleguide Primeng.calendar
+ */
+@import "calendar";
+/*
+fileupload
+
+Styleguide Primeng.fileupload
+ */
+@import "fileupload";
+/*
+password-panel
+
+Styleguide Primeng.password-panel
+ */
+@import "password-panel";
+/*
+inputgroup
+
+Styleguide Primeng.inputgroup
+ */
+@import "inputgroup";
+/*
+button
+
+Styleguide Primeng.button
+ */
+@import "button";
+/*
+panel
+
+Styleguide Primeng.panel
+ */
+@import "panel";
+/*
+accordion
+
+Styleguide Primeng.accordion
+ */
+@import "accordion";
+/*
+tabview
+
+Styleguide Primeng.tabview
+ */
+@import "tabview";
+/*
+toolbar
+
+Styleguide Primeng.toolbar
+ */
+@import "toolbar";
+/*
+card
+
+Styleguide Primeng.card
+ */
+@import "card";
+/*
+paginator
+
+Markup:
+<p-paginator [rows]="10" [totalRecords]="120" [rowsPerPageOptions]="[10,20,30]" pageLinkSize="3"></p-paginator>
+<div class="ui-paginator ui-widget ui-widget-header ui-unselectable-text ui-helper-clearfix">
+  <a class="ui-paginator-first ui-paginator-element ui-state-default ui-corner-all ui-state-disabled" tabindex="-1">
+    <span class="ui-paginator-icon pi pi-step-backward"></span>
+  </a>
+  <a class="ui-paginator-prev ui-paginator-element ui-state-default ui-corner-all ui-state-disabled" tabindex="-1">
+    <span class="ui-paginator-icon pi pi-caret-left"></span>
+  </a>
+  <span class="ui-paginator-pages">
+    <a class="ui-paginator-page ui-paginator-element ui-state-default ui-corner-all ui-state-active"
+       tabindex="0">1</a>
+    <a class="ui-paginator-page ui-paginator-element ui-state-default ui-corner-all" tabindex="0">2</a>
+    <a class="ui-paginator-page ui-paginator-element ui-state-default ui-corner-all" tabindex="0">3</a>
+    <a class="ui-paginator-page ui-paginator-element ui-state-default ui-corner-all" tabindex="0">4</a>
+    <a class="ui-paginator-page ui-paginator-element ui-state-default ui-corner-all" tabindex="0">5</a>
+  </span>
+  <a class="ui-paginator-next ui-paginator-element ui-state-default ui-corner-all" tabindex="0">
+    <span class="ui-paginator-icon pi pi-caret-right"></span>
+  </a>
+  <a class="ui-paginator-last ui-paginator-element ui-state-default ui-corner-all" tabindex="0">
+    <span class="ui-paginator-icon pi pi-step-forward"></span>
+  </a>
+</div>
+
+Styleguide Primeng.paginator
+ */
+@import "paginator";
+/*
+table
+
+Styleguide Primeng.table
+ */
+@import "table";
+/*
+datagrid
+
+Styleguide Primeng.datagrid
+ */
+@import "datagrid";
+/*
+virtualscroller
+
+Styleguide Primeng.virtualscroller
+ */
+@import "virtualscroller";
+/*
+dataview
+
+Styleguide Primeng.dataview
+ */
+@import "dataview";
+/*
+full-calendar
+
+Styleguide Primeng.full-calendar
+ */
+@import "full-calendar";
+/*
+picklist
+
+Styleguide Primeng.picklist
+ */
+@import "picklist";
+/*
+multiselect
+
+Styleguide Primeng.multiselect
+ */
+@import "multiselect";
+/*
+orderlist
+
+Styleguide Primeng.orderlist
+ */
+@import "orderlist";
+/*
+tree
+
+Styleguide Primeng.tree
+ */
+@import "tree";
+/*
+organizationchart
+
+Styleguide Primeng.organizationchart
+ */
+@import "organizationchart";
+/*
+carousel
+
+Styleguide Primeng.carousel
+ */
+@import "carousel";
+/*
+messages
+
+Styleguide Primeng.messages
+ */
+@import "messages";
+/*
+growl
+
+Styleguide Primeng.growl
+ */
+@import "growl";
+/*
+toast
+
+Styleguide Primeng.toast
+ */
+@import "toast";
+/*
+overlaypanel
+
+Styleguide Primeng.overlaypanel
+ */
+@import "overlaypanel";
+/*
+dialog
+
+Styleguide Primeng.dialog
+ */
+@import "dialog";
+/*
+sidebar
+
+Styleguide Primeng.sidebar
+ */
+@import "sidebar";
+/*
+slider
+
+Styleguide Primeng.slider
+ */
+@import "slider";
+/*
+tooltip
+
+Styleguide Primeng.tooltip
+ */
+@import "tooltip";
+/*
+lightbox
+
+Styleguide Primeng.lightbox
+ */
+@import "lightbox";
+/*
+breadcrumb
+
+Styleguide Primeng.breadcrumb
+ */
+@import "breadcrumb";
+/*
+steps
+
+Styleguide Primeng.steps
+ */
+@import "steps";
+/*
+menu
+
+Styleguide Primeng.menu
+ */
+@import "menu";
+/*
+progressbar
+
+Styleguide Primeng.progressbar
+ */
+@import "progressbar";
+/*
+progressspinner
+
+Styleguide Primeng.progressspinner
+ */
+@import "progressspinner";
+/*
+galleria
+
+Styleguide Primeng.galleria
+ */
+@import "galleria";
+/*
+terminal
+
+Styleguide Primeng.terminal
+ */
+@import "terminal";
+/*
+inplace
+
+Styleguide Primeng.inplace
+ */
+@import "inplace";
+/*
+colorpicker
+
+Styleguide Primeng.colorpicker
+ */
+@import "colorpicker";
